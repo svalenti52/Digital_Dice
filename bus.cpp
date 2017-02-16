@@ -41,6 +41,7 @@ public:
 std::ostream& operator << (std::ostream& o, rider& r)
 {
     o << "rider time point = " << r.bus_stop_tp << '\n';
+    return o; // this did not exist previously; without it, compiled with g++ but not with MVS
 }
 
 /*--------------------------------------------------------------------------*/
