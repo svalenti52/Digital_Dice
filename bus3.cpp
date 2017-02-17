@@ -81,7 +81,7 @@ int main()
     vector<bus> busses { bus(0, 1.0) };
     for ( int jx = 1; jx < nr_busses; ++jx )
     	busses.push_back(bus(jx, uniform_dist_over_1(dre)));
-	rider our_rider(uniform_dist_over_1(dre));
+    rider our_rider(uniform_dist_over_1(dre));
 
     for ( int ix = 0; ix < nr_trials; ++ix )
     {
