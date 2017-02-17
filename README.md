@@ -22,6 +22,7 @@ g++ -std=c++14
 	them again. The file bus3.cpp adds a couple of new member functions to the
 	bus and rider classes (for updating the arrival times) and then moves
 	construction outside of the loop. Note that we are looping 10,000,000
+	times. The run time (on my computer) is given for the files:
 
-	g++ -std=c++14 -O2 bus.cpp		=> ~6600 ms
+	g++ -std=c++14 -O2 bus.cpp		=> ~6600 ms <br>
 	g++ -std=c++14 -O2 bus3.cpp		=> ~690  ms
