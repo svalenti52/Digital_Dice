@@ -4,12 +4,31 @@ Digital Dice Problems by Paul Nahin
 Compiled with
 g++ -std=c++14
 
+Chapter 14. Parrondo's Paradox <br>
+
+	Problem: Two coin-flipping gambling games are proposed. The first one is
+	with a slightly unfavorable coin (let us say it lands as heads slightly
+	less than half of the time). The second one is more complicated, involving
+	two coins, one very unfavorable, the other a favorable coin but no match
+	for the unfavorable one. The second game is complicated by the fact that
+	1/3 of the time you play with the very unfavorable coin and 2/3 of the
+	time you play with the favorable one. Given the right parameterization, it
+	turns out that both games are losers for you. But astoundingly, if you
+	introduce another coin, this one finally a fair coin, and use it to choose
+	which game you play (both losing propositions), you will find that this
+	additional randomization is sufficient to win!
+
+	The file parrondo.cpp contains the parameterization necessary to prove the
+	result. Also, the file parrando1.cpp contains just the second game to
+	demonstrate that it is a losing game.
+
 Chapter 17. Waiting for Buses <br>
+
 	Problem: A set of N buses are distributed to arrive within a one hour
 	window. One arrival is set to the end of the hour, the other N-1 arrive at
-	random, uniformly distributed arrival times with the hour.  If a rider
+	random, uniformly distributed arrival times within the hour.  If a rider
 	also arrives at a random, uniformly distributed time within the hour, what
-	is average wait time for a bus to arrive?
+	is the average wait time for a bus to arrive?
 
 	The answer is 1/(N+1) hours (or 60/(N+1) minutes). The author also
 	provides an analytical approach which turns out to be more involved than
