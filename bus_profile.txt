@@ -1,0 +1,542 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 78.65     16.28    16.28                             _mcount_private
+ 10.87     18.53     2.25                             __fentry__
+  2.66     19.08     0.55 10000000     0.00     0.00  double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&)
+  0.97     19.28     0.20 20000000     0.00     0.00  std::log(long double)
+  0.43     19.37     0.09 20000000     0.00     0.00  bool __gnu_cxx::operator!=<bus*, std::vector<bus, std::allocator<bus> > >(__gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&, __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&)
+  0.43     19.46     0.09 10000000     0.00     0.00  std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*)
+  0.39     19.54     0.08 10000000     0.00     0.00  double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&)
+  0.34     19.61     0.07 10000000     0.00     0.00  double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&)
+  0.34     19.68     0.07 10000000     0.00     0.00  void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag)
+  0.29     19.74     0.06 30000000     0.00     0.00  std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::min()
+  0.29     19.80     0.06 10000000     0.00     0.00  closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&)
+  0.29     19.86     0.06 10000000     0.00     0.00  rider::rider(double)
+  0.24     19.91     0.05 10000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::allocate(unsigned long, void const*)
+  0.24     19.96     0.05 10000000     0.00     0.00  std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::_Adaptor(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&)
+  0.24     20.01     0.05        1     0.05     2.10  main
+  0.19     20.05     0.04 20000000     0.00     0.00  std::uniform_real_distribution<double>::param_type::a() const
+  0.19     20.09     0.04 20000000     0.00     0.00  std::__detail::_Mod<unsigned long, 2147483647ul, 16807ul, 0ul, true, true>::__calc(unsigned long)
+  0.19     20.13     0.04 10000000     0.00     0.00  __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator++()
+  0.19     20.17     0.04 10000000     0.00     0.00  std::initializer_list<bus>::end() const
+  0.19     20.21     0.04 10000000     0.00     0.00  bus* std::uninitialized_copy<bus const*, bus*>(bus const*, bus const*, bus*)
+  0.14     20.24     0.03 10000000     0.00     0.00  bus::bus(int, double)
+  0.14     20.27     0.03 10000000     0.00     0.00  std::uniform_real_distribution<double>::param_type::b() const
+  0.14     20.30     0.03 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base()
+  0.14     20.33     0.03 10000000     0.00     0.00  std::vector<bus, std::allocator<bus> >::begin()
+  0.14     20.36     0.03 10000000     0.00     0.00  unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  0.14     20.39     0.03                             operator new(unsigned long)
+  0.10     20.41     0.02 20000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::~new_allocator()
+  0.10     20.43     0.02 20000000     0.00     0.00  __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::__normal_iterator(bus* const&)
+  0.10     20.45     0.02 20000000     0.00     0.00  std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::operator()()
+  0.10     20.47     0.02 10000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::deallocate(bus*, unsigned long)
+  0.10     20.49     0.02 10000000     0.00     0.00  std::allocator<bus>::~allocator()
+  0.10     20.51     0.02 10000000     0.00     0.00  std::allocator_traits<std::allocator<bus> >::deallocate(std::allocator<bus>&, bus*, unsigned long)
+  0.10     20.53     0.02 10000000     0.00     0.00  std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&)
+  0.10     20.55     0.02 10000000     0.00     0.00  void std::_Construct<bus, bus const&>(bus*, bus const&)
+  0.10     20.57     0.02 10000000     0.00     0.00  bus* std::__uninitialized_copy_a<bus const*, bus*, bus>(bus const*, bus const*, bus*, std::allocator<bus>&)
+  0.10     20.59     0.02 10000000     0.00     0.00  unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  0.10     20.61     0.02                             operator delete(void*)
+  0.10     20.63     0.02                             logl
+  0.05     20.64     0.01 40000000     0.00     0.00  __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::base() const
+  0.05     20.65     0.01 20000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_M_get_Tp_allocator()
+  0.05     20.66     0.01 10000000     0.00     0.00  std::allocator<bus>::allocator()
+  0.05     20.67     0.01 10000000     0.00     0.00  std::allocator<bus>::~allocator()
+  0.05     20.68     0.01 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::~_Vector_impl()
+  0.05     20.69     0.01 10000000     0.00     0.00  std::iterator_traits<bus const*>::difference_type std::__distance<bus const*>(bus const*, bus const*, std::random_access_iterator_tag)
+  0.05     20.70     0.01 10000000     0.00     0.00  std::iterator_traits<bus const*>::iterator_category std::__iterator_category<bus const*>(bus const* const&)
+  0.00     20.70     0.00 20000000     0.00     0.00  std::initializer_list<bus>::begin() const
+  0.00     20.70     0.00 20000000     0.00     0.00  unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long)
+  0.00     20.70     0.00 10000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::new_allocator(__gnu_cxx::new_allocator<bus> const&)
+  0.00     20.70     0.00 10000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::new_allocator()
+  0.00     20.70     0.00 10000000     0.00     0.00  __gnu_cxx::new_allocator<bus>::max_size() const
+  0.00     20.70     0.00 10000000     0.00     0.00  __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator*() const
+  0.00     20.70     0.00 10000000     0.00     0.00  std::initializer_list<bus>::size() const
+  0.00     20.70     0.00 10000000     0.00     0.00  std::allocator<bus>::allocator(std::allocator<bus> const&)
+  0.00     20.70     0.00 10000000     0.00     0.00  void std::_Destroy_aux<true>::__destroy<bus*>(bus*, bus*)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_M_allocate(unsigned long)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::_Vector_impl(std::allocator<bus> const&)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_M_deallocate(bus*, unsigned long)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::_Vector_base<bus, std::allocator<bus> >::_Vector_base(std::allocator<bus> const&)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::allocator_traits<std::allocator<bus> >::allocate(std::allocator<bus>&, unsigned long)
+  0.00     20.70     0.00 10000000     0.00     0.00  bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*)
+  0.00     20.70     0.00 10000000     0.00     0.00  std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::max()
+  0.00     20.70     0.00 10000000     0.00     0.00  std::vector<bus, std::allocator<bus> >::end()
+  0.00     20.70     0.00 10000000     0.00     0.00  std::vector<bus, std::allocator<bus> >::~vector()
+  0.00     20.70     0.00 10000000     0.00     0.00  std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::operator()()
+  0.00     20.70     0.00 10000000     0.00     0.00  bus* std::__addressof<bus>(bus&)
+  0.00     20.70     0.00 10000000     0.00     0.00  bus const& std::forward<bus const&>(std::remove_reference<bus const&>::type&)
+  0.00     20.70     0.00 10000000     0.00     0.00  void std::_Destroy<bus*>(bus*, bus*)
+  0.00     20.70     0.00 10000000     0.00     0.00  void std::_Destroy<bus*, bus>(bus*, bus*, std::allocator<bus>&)
+  0.00     20.70     0.00 10000000     0.00     0.00  operator new(unsigned long, void*)
+  0.00     20.70     0.00        3     0.00     0.00  std::__detail::_Mod<unsigned long, 2147483647ul, 1ul, 0ul, true, true>::__calc(unsigned long)
+  0.00     20.70     0.00        3     0.00     0.00  unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)
+  0.00     20.70     0.00        1     0.00     0.00  std::uniform_real_distribution<double>::param_type::param_type(double, double)
+  0.00     20.70     0.00        1     0.00     0.00  std::uniform_real_distribution<double>::uniform_real_distribution(double, double)
+  0.00     20.70     0.00        1     0.00     0.00  std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::seed(unsigned long)
+  0.00     20.70     0.00        1     0.00     0.00  std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::linear_congruential_engine(unsigned long)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.05% of 20.70 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     78.6   16.28    0.00                 _mcount_private [1]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     10.9    2.25    0.00                 __fentry__ [2]
+-----------------------------------------------
+                0.05    2.05       1/1           _GLOBAL__sub_I__ZlsRSoR3bus [4]
+[3]     10.1    0.05    2.05       1         main [3]
+                0.07    1.12 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [5]
+                0.02    0.35 10000000/10000000     std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+                0.06    0.19 10000000/10000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+                0.00    0.12 10000000/10000000     std::vector<bus, std::allocator<bus> >::~vector() [13]
+                0.06    0.00 10000000/10000000     rider::rider(double) [20]
+                0.03    0.00 10000000/10000000     bus::bus(int, double) [35]
+                0.01    0.01 10000000/10000000     std::allocator<bus>::~allocator() [44]
+                0.01    0.00 10000000/10000000     std::allocator<bus>::allocator() [51]
+                0.00    0.00       1/1           std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::linear_congruential_engine(unsigned long) [130]
+                0.00    0.00       1/1           std::uniform_real_distribution<double>::uniform_real_distribution(double, double) [128]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]     10.1    0.00    2.10                 _GLOBAL__sub_I__ZlsRSoR3bus [4]
+                0.05    2.05       1/1           main [3]
+-----------------------------------------------
+                0.07    1.12 10000000/10000000     main [3]
+[5]      5.7    0.07    1.12 10000000         double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [5]
+                0.08    1.04 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+-----------------------------------------------
+                0.08    1.04 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [5]
+[6]      5.4    0.08    1.04 10000000         double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+                0.00    0.92 10000000/10000000     std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::operator()() [7]
+                0.05    0.00 10000000/10000000     std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::_Adaptor(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [25]
+                0.04    0.00 20000000/20000000     std::uniform_real_distribution<double>::param_type::a() const [26]
+                0.03    0.00 10000000/10000000     std::uniform_real_distribution<double>::param_type::b() const [36]
+-----------------------------------------------
+                0.00    0.92 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+[7]      4.4    0.00    0.92 10000000         std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::operator()() [7]
+                0.55    0.37 10000000/10000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+-----------------------------------------------
+                0.55    0.37 10000000/10000000     std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::operator()() [7]
+[8]      4.4    0.55    0.37 10000000         double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+                0.20    0.00 20000000/20000000     std::log(long double) [12]
+                0.06    0.00 30000000/30000000     std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::min() [18]
+                0.02    0.04 20000000/20000000     std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::operator()() [19]
+                0.03    0.00 10000000/10000000     unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [38]
+                0.02    0.00 10000000/10000000     unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [47]
+                0.00    0.00 10000000/10000000     std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::max() [119]
+-----------------------------------------------
+                0.02    0.35 10000000/10000000     main [3]
+[9]      1.8    0.02    0.35 10000000         std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+                0.07    0.24 10000000/10000000     void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+                0.04    0.00 10000000/10000000     std::initializer_list<bus>::end() const [30]
+                0.00    0.00 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_base(std::allocator<bus> const&) [118]
+                0.00    0.00 10000000/20000000     std::initializer_list<bus>::begin() const [109]
+-----------------------------------------------
+                0.07    0.24 10000000/10000000     std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+[10]     1.5    0.07    0.24 10000000         void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+                0.09    0.02 10000000/10000000     std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*) [15]
+                0.02    0.06 10000000/10000000     bus* std::__uninitialized_copy_a<bus const*, bus*, bus>(bus const*, bus const*, bus*, std::allocator<bus>&) [17]
+                0.00    0.05 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_M_allocate(unsigned long) [23]
+                0.01    0.00 10000000/20000000     std::_Vector_base<bus, std::allocator<bus> >::_M_get_Tp_allocator() [50]
+-----------------------------------------------
+                0.06    0.19 10000000/10000000     main [3]
+[11]     1.2    0.06    0.19 10000000         closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+                0.09    0.01 20000000/20000000     bool __gnu_cxx::operator!=<bus*, std::vector<bus, std::allocator<bus> > >(__gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&, __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&) [16]
+                0.03    0.01 10000000/10000000     std::vector<bus, std::allocator<bus> >::begin() [34]
+                0.04    0.00 10000000/10000000     __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator++() [29]
+                0.00    0.01 10000000/10000000     std::vector<bus, std::allocator<bus> >::end() [52]
+                0.00    0.00 10000000/10000000     __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator*() const [113]
+-----------------------------------------------
+                0.20    0.00 20000000/20000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[12]     1.0    0.20    0.00 20000000         std::log(long double) [12]
+-----------------------------------------------
+                0.00    0.12 10000000/10000000     main [3]
+[13]     0.6    0.00    0.12 10000000         std::vector<bus, std::allocator<bus> >::~vector() [13]
+                0.03    0.08 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base() [14]
+                0.01    0.00 10000000/20000000     std::_Vector_base<bus, std::allocator<bus> >::_M_get_Tp_allocator() [50]
+                0.00    0.00 10000000/10000000     void std::_Destroy<bus*, bus>(bus*, bus*, std::allocator<bus>&) [123]
+-----------------------------------------------
+                0.03    0.08 10000000/10000000     std::vector<bus, std::allocator<bus> >::~vector() [13]
+[14]     0.5    0.03    0.08 10000000         std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base() [14]
+                0.00    0.04 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_M_deallocate(bus*, unsigned long) [32]
+                0.01    0.03 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::~_Vector_impl() [31]
+-----------------------------------------------
+                0.09    0.02 10000000/10000000     void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+[15]     0.5    0.09    0.02 10000000         std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*) [15]
+                0.01    0.00 10000000/10000000     std::iterator_traits<bus const*>::iterator_category std::__iterator_category<bus const*>(bus const* const&) [54]
+                0.01    0.00 10000000/10000000     std::iterator_traits<bus const*>::difference_type std::__distance<bus const*>(bus const*, bus const*, std::random_access_iterator_tag) [53]
+-----------------------------------------------
+                0.09    0.01 20000000/20000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+[16]     0.5    0.09    0.01 20000000         bool __gnu_cxx::operator!=<bus*, std::vector<bus, std::allocator<bus> > >(__gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&, __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&) [16]
+                0.01    0.00 40000000/40000000     __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::base() const [49]
+-----------------------------------------------
+                0.02    0.06 10000000/10000000     void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+[17]     0.4    0.02    0.06 10000000         bus* std::__uninitialized_copy_a<bus const*, bus*, bus>(bus const*, bus const*, bus*, std::allocator<bus>&) [17]
+                0.04    0.02 10000000/10000000     bus* std::uninitialized_copy<bus const*, bus*>(bus const*, bus const*, bus*) [21]
+-----------------------------------------------
+                0.06    0.00 30000000/30000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[18]     0.3    0.06    0.00 30000000         std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::min() [18]
+-----------------------------------------------
+                0.02    0.04 20000000/20000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[19]     0.3    0.02    0.04 20000000         std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::operator()() [19]
+                0.00    0.04 20000000/20000000     unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long) [28]
+-----------------------------------------------
+                0.06    0.00 10000000/10000000     main [3]
+[20]     0.3    0.06    0.00 10000000         rider::rider(double) [20]
+-----------------------------------------------
+                0.04    0.02 10000000/10000000     bus* std::__uninitialized_copy_a<bus const*, bus*, bus>(bus const*, bus const*, bus*, std::allocator<bus>&) [17]
+[21]     0.3    0.04    0.02 10000000         bus* std::uninitialized_copy<bus const*, bus*>(bus const*, bus const*, bus*) [21]
+                0.00    0.02 10000000/10000000     bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*) [45]
+-----------------------------------------------
+                0.05    0.00 10000000/10000000     std::allocator_traits<std::allocator<bus> >::allocate(std::allocator<bus>&, unsigned long) [24]
+[22]     0.2    0.05    0.00 10000000         __gnu_cxx::new_allocator<bus>::allocate(unsigned long, void const*) [22]
+                0.00    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::max_size() const [112]
+-----------------------------------------------
+                0.00    0.05 10000000/10000000     void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+[23]     0.2    0.00    0.05 10000000         std::_Vector_base<bus, std::allocator<bus> >::_M_allocate(unsigned long) [23]
+                0.00    0.05 10000000/10000000     std::allocator_traits<std::allocator<bus> >::allocate(std::allocator<bus>&, unsigned long) [24]
+-----------------------------------------------
+                0.00    0.05 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_M_allocate(unsigned long) [23]
+[24]     0.2    0.00    0.05 10000000         std::allocator_traits<std::allocator<bus> >::allocate(std::allocator<bus>&, unsigned long) [24]
+                0.05    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::allocate(unsigned long, void const*) [22]
+-----------------------------------------------
+                0.05    0.00 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+[25]     0.2    0.05    0.00 10000000         std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::_Adaptor(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [25]
+-----------------------------------------------
+                0.04    0.00 20000000/20000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+[26]     0.2    0.04    0.00 20000000         std::uniform_real_distribution<double>::param_type::a() const [26]
+-----------------------------------------------
+                0.04    0.00 20000000/20000000     unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long) [28]
+[27]     0.2    0.04    0.00 20000000         std::__detail::_Mod<unsigned long, 2147483647ul, 16807ul, 0ul, true, true>::__calc(unsigned long) [27]
+-----------------------------------------------
+                0.00    0.04 20000000/20000000     std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::operator()() [19]
+[28]     0.2    0.00    0.04 20000000         unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long) [28]
+                0.04    0.00 20000000/20000000     std::__detail::_Mod<unsigned long, 2147483647ul, 16807ul, 0ul, true, true>::__calc(unsigned long) [27]
+-----------------------------------------------
+                0.04    0.00 10000000/10000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+[29]     0.2    0.04    0.00 10000000         __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator++() [29]
+-----------------------------------------------
+                0.04    0.00 10000000/10000000     std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+[30]     0.2    0.04    0.00 10000000         std::initializer_list<bus>::end() const [30]
+                0.00    0.00 10000000/20000000     std::initializer_list<bus>::begin() const [109]
+                0.00    0.00 10000000/10000000     std::initializer_list<bus>::size() const [114]
+-----------------------------------------------
+                0.01    0.03 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base() [14]
+[31]     0.2    0.01    0.03 10000000         std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::~_Vector_impl() [31]
+                0.02    0.01 10000000/10000000     std::allocator<bus>::~allocator() [37]
+-----------------------------------------------
+                0.00    0.04 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base() [14]
+[32]     0.2    0.00    0.04 10000000         std::_Vector_base<bus, std::allocator<bus> >::_M_deallocate(bus*, unsigned long) [32]
+                0.02    0.02 10000000/10000000     std::allocator_traits<std::allocator<bus> >::deallocate(std::allocator<bus>&, bus*, unsigned long) [33]
+-----------------------------------------------
+                0.02    0.02 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_M_deallocate(bus*, unsigned long) [32]
+[33]     0.2    0.02    0.02 10000000         std::allocator_traits<std::allocator<bus> >::deallocate(std::allocator<bus>&, bus*, unsigned long) [33]
+                0.02    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::deallocate(bus*, unsigned long) [43]
+-----------------------------------------------
+                0.03    0.01 10000000/10000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+[34]     0.2    0.03    0.01 10000000         std::vector<bus, std::allocator<bus> >::begin() [34]
+                0.01    0.00 10000000/20000000     __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::__normal_iterator(bus* const&) [42]
+-----------------------------------------------
+                0.03    0.00 10000000/10000000     main [3]
+[35]     0.1    0.03    0.00 10000000         bus::bus(int, double) [35]
+-----------------------------------------------
+                0.03    0.00 10000000/10000000     double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [6]
+[36]     0.1    0.03    0.00 10000000         std::uniform_real_distribution<double>::param_type::b() const [36]
+-----------------------------------------------
+                0.02    0.01 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::~_Vector_impl() [31]
+[37]     0.1    0.02    0.01 10000000         std::allocator<bus>::~allocator() [37]
+                0.01    0.00 10000000/20000000     __gnu_cxx::new_allocator<bus>::~new_allocator() [41]
+-----------------------------------------------
+                0.03    0.00 10000000/10000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[38]     0.1    0.03    0.00 10000000         unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) [38]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.1    0.03    0.00                 operator new(unsigned long) [39]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.1    0.02    0.00                 logl [40]
+-----------------------------------------------
+                0.01    0.00 10000000/20000000     std::allocator<bus>::~allocator() [44]
+                0.01    0.00 10000000/20000000     std::allocator<bus>::~allocator() [37]
+[41]     0.1    0.02    0.00 20000000         __gnu_cxx::new_allocator<bus>::~new_allocator() [41]
+-----------------------------------------------
+                0.01    0.00 10000000/20000000     std::vector<bus, std::allocator<bus> >::end() [52]
+                0.01    0.00 10000000/20000000     std::vector<bus, std::allocator<bus> >::begin() [34]
+[42]     0.1    0.02    0.00 20000000         __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::__normal_iterator(bus* const&) [42]
+-----------------------------------------------
+                0.02    0.00 10000000/10000000     std::allocator_traits<std::allocator<bus> >::deallocate(std::allocator<bus>&, bus*, unsigned long) [33]
+[43]     0.1    0.02    0.00 10000000         __gnu_cxx::new_allocator<bus>::deallocate(bus*, unsigned long) [43]
+-----------------------------------------------
+                0.01    0.01 10000000/10000000     main [3]
+[44]     0.1    0.01    0.01 10000000         std::allocator<bus>::~allocator() [44]
+                0.01    0.00 10000000/20000000     __gnu_cxx::new_allocator<bus>::~new_allocator() [41]
+-----------------------------------------------
+                0.00    0.02 10000000/10000000     bus* std::uninitialized_copy<bus const*, bus*>(bus const*, bus const*, bus*) [21]
+[45]     0.1    0.00    0.02 10000000         bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*) [45]
+                0.02    0.00 10000000/10000000     void std::_Construct<bus, bus const&>(bus*, bus const&) [46]
+                0.00    0.00 10000000/10000000     bus* std::__addressof<bus>(bus&) [120]
+-----------------------------------------------
+                0.02    0.00 10000000/10000000     bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*) [45]
+[46]     0.1    0.02    0.00 10000000         void std::_Construct<bus, bus const&>(bus*, bus const&) [46]
+                0.00    0.00 10000000/10000000     bus const& std::forward<bus const&>(std::remove_reference<bus const&>::type&) [121]
+                0.00    0.00 10000000/10000000     operator new(unsigned long, void*) [124]
+-----------------------------------------------
+                0.02    0.00 10000000/10000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[47]     0.1    0.02    0.00 10000000         unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) [47]
+-----------------------------------------------
+                                                 <spontaneous>
+[48]     0.1    0.02    0.00                 operator delete(void*) [48]
+-----------------------------------------------
+                0.01    0.00 40000000/40000000     bool __gnu_cxx::operator!=<bus*, std::vector<bus, std::allocator<bus> > >(__gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&, __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&) [16]
+[49]     0.0    0.01    0.00 40000000         __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::base() const [49]
+-----------------------------------------------
+                0.01    0.00 10000000/20000000     void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [10]
+                0.01    0.00 10000000/20000000     std::vector<bus, std::allocator<bus> >::~vector() [13]
+[50]     0.0    0.01    0.00 20000000         std::_Vector_base<bus, std::allocator<bus> >::_M_get_Tp_allocator() [50]
+-----------------------------------------------
+                0.01    0.00 10000000/10000000     main [3]
+[51]     0.0    0.01    0.00 10000000         std::allocator<bus>::allocator() [51]
+                0.00    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::new_allocator() [111]
+-----------------------------------------------
+                0.00    0.01 10000000/10000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+[52]     0.0    0.00    0.01 10000000         std::vector<bus, std::allocator<bus> >::end() [52]
+                0.01    0.00 10000000/20000000     __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::__normal_iterator(bus* const&) [42]
+-----------------------------------------------
+                0.01    0.00 10000000/10000000     std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*) [15]
+[53]     0.0    0.01    0.00 10000000         std::iterator_traits<bus const*>::difference_type std::__distance<bus const*>(bus const*, bus const*, std::random_access_iterator_tag) [53]
+-----------------------------------------------
+                0.01    0.00 10000000/10000000     std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*) [15]
+[54]     0.0    0.01    0.00 10000000         std::iterator_traits<bus const*>::iterator_category std::__iterator_category<bus const*>(bus const* const&) [54]
+-----------------------------------------------
+                0.00    0.00 10000000/20000000     std::initializer_list<bus>::end() const [30]
+                0.00    0.00 10000000/20000000     std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+[109]    0.0    0.00    0.00 20000000         std::initializer_list<bus>::begin() const [109]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::allocator<bus>::allocator(std::allocator<bus> const&) [115]
+[110]    0.0    0.00    0.00 10000000         __gnu_cxx::new_allocator<bus>::new_allocator(__gnu_cxx::new_allocator<bus> const&) [110]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::allocator<bus>::allocator() [51]
+[111]    0.0    0.00    0.00 10000000         __gnu_cxx::new_allocator<bus>::new_allocator() [111]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::allocate(unsigned long, void const*) [22]
+[112]    0.0    0.00    0.00 10000000         __gnu_cxx::new_allocator<bus>::max_size() const [112]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [11]
+[113]    0.0    0.00    0.00 10000000         __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator*() const [113]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::initializer_list<bus>::end() const [30]
+[114]    0.0    0.00    0.00 10000000         std::initializer_list<bus>::size() const [114]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::_Vector_impl(std::allocator<bus> const&) [117]
+[115]    0.0    0.00    0.00 10000000         std::allocator<bus>::allocator(std::allocator<bus> const&) [115]
+                0.00    0.00 10000000/10000000     __gnu_cxx::new_allocator<bus>::new_allocator(__gnu_cxx::new_allocator<bus> const&) [110]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     void std::_Destroy<bus*>(bus*, bus*) [122]
+[116]    0.0    0.00    0.00 10000000         void std::_Destroy_aux<true>::__destroy<bus*>(bus*, bus*) [116]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_base(std::allocator<bus> const&) [118]
+[117]    0.0    0.00    0.00 10000000         std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::_Vector_impl(std::allocator<bus> const&) [117]
+                0.00    0.00 10000000/10000000     std::allocator<bus>::allocator(std::allocator<bus> const&) [115]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [9]
+[118]    0.0    0.00    0.00 10000000         std::_Vector_base<bus, std::allocator<bus> >::_Vector_base(std::allocator<bus> const&) [118]
+                0.00    0.00 10000000/10000000     std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::_Vector_impl(std::allocator<bus> const&) [117]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [8]
+[119]    0.0    0.00    0.00 10000000         std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::max() [119]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*) [45]
+[120]    0.0    0.00    0.00 10000000         bus* std::__addressof<bus>(bus&) [120]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     void std::_Construct<bus, bus const&>(bus*, bus const&) [46]
+[121]    0.0    0.00    0.00 10000000         bus const& std::forward<bus const&>(std::remove_reference<bus const&>::type&) [121]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     void std::_Destroy<bus*, bus>(bus*, bus*, std::allocator<bus>&) [123]
+[122]    0.0    0.00    0.00 10000000         void std::_Destroy<bus*>(bus*, bus*) [122]
+                0.00    0.00 10000000/10000000     void std::_Destroy_aux<true>::__destroy<bus*>(bus*, bus*) [116]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     std::vector<bus, std::allocator<bus> >::~vector() [13]
+[123]    0.0    0.00    0.00 10000000         void std::_Destroy<bus*, bus>(bus*, bus*, std::allocator<bus>&) [123]
+                0.00    0.00 10000000/10000000     void std::_Destroy<bus*>(bus*, bus*) [122]
+-----------------------------------------------
+                0.00    0.00 10000000/10000000     void std::_Construct<bus, bus const&>(bus*, bus const&) [46]
+[124]    0.0    0.00    0.00 10000000         operator new(unsigned long, void*) [124]
+-----------------------------------------------
+                0.00    0.00       3/3           unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long) [126]
+[125]    0.0    0.00    0.00       3         std::__detail::_Mod<unsigned long, 2147483647ul, 1ul, 0ul, true, true>::__calc(unsigned long) [125]
+-----------------------------------------------
+                0.00    0.00       3/3           std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::seed(unsigned long) [129]
+[126]    0.0    0.00    0.00       3         unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long) [126]
+                0.00    0.00       3/3           std::__detail::_Mod<unsigned long, 2147483647ul, 1ul, 0ul, true, true>::__calc(unsigned long) [125]
+-----------------------------------------------
+                0.00    0.00       1/1           std::uniform_real_distribution<double>::uniform_real_distribution(double, double) [128]
+[127]    0.0    0.00    0.00       1         std::uniform_real_distribution<double>::param_type::param_type(double, double) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[128]    0.0    0.00    0.00       1         std::uniform_real_distribution<double>::uniform_real_distribution(double, double) [128]
+                0.00    0.00       1/1           std::uniform_real_distribution<double>::param_type::param_type(double, double) [127]
+-----------------------------------------------
+                0.00    0.00       1/1           std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::linear_congruential_engine(unsigned long) [130]
+[129]    0.0    0.00    0.00       1         std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::seed(unsigned long) [129]
+                0.00    0.00       3/3           unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long) [126]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[130]    0.0    0.00    0.00       1         std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::linear_congruential_engine(unsigned long) [130]
+                0.00    0.00       1/1           std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::seed(unsigned long) [129]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [11] closest_bus_time(std::vector<bus, std::allocator<bus> >&, rider&) [117] std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::_Vector_impl(std::allocator<bus> const&) [28] unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 16807ul, 0ul>(unsigned long)
+  [35] bus::bus(int, double)  [31] std::_Vector_base<bus, std::allocator<bus> >::_Vector_impl::~_Vector_impl() [126] unsigned long std::__detail::__mod<unsigned long, 2147483647ul, 1ul, 0ul>(unsigned long)
+  [20] rider::rider(double)   [32] std::_Vector_base<bus, std::allocator<bus> >::_M_deallocate(bus*, unsigned long) [25] std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::_Adaptor(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&)
+  [43] __gnu_cxx::new_allocator<bus>::deallocate(bus*, unsigned long) [50] std::_Vector_base<bus, std::allocator<bus> >::_M_get_Tp_allocator() [7] std::__detail::_Adaptor<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>, double>::operator()()
+  [22] __gnu_cxx::new_allocator<bus>::allocate(unsigned long, void const*) [118] std::_Vector_base<bus, std::allocator<bus> >::_Vector_base(std::allocator<bus> const&) [46] void std::_Construct<bus, bus const&>(bus*, bus const&)
+ [110] __gnu_cxx::new_allocator<bus>::new_allocator(__gnu_cxx::new_allocator<bus> const&) [14] std::_Vector_base<bus, std::allocator<bus> >::~_Vector_base() [53] std::iterator_traits<bus const*>::difference_type std::__distance<bus const*>(bus const*, bus const*, std::random_access_iterator_tag)
+ [111] __gnu_cxx::new_allocator<bus>::new_allocator() [33] std::allocator_traits<std::allocator<bus> >::deallocate(std::allocator<bus>&, bus*, unsigned long) [120] bus* std::__addressof<bus>(bus&)
+  [41] __gnu_cxx::new_allocator<bus>::~new_allocator() [24] std::allocator_traits<std::allocator<bus> >::allocate(std::allocator<bus>&, unsigned long) [8] double std::generate_canonical<double, 53ul, std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&)
+  [42] __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::__normal_iterator(bus* const&) [45] bus* std::__uninitialized_copy<false>::__uninit_copy<bus const*, bus*>(bus const*, bus const*, bus*) [21] bus* std::uninitialized_copy<bus const*, bus*>(bus const*, bus const*, bus*)
+  [29] __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator++() [127] std::uniform_real_distribution<double>::param_type::param_type(double, double) [54] std::iterator_traits<bus const*>::iterator_category std::__iterator_category<bus const*>(bus const* const&)
+  [16] bool __gnu_cxx::operator!=<bus*, std::vector<bus, std::allocator<bus> > >(__gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&, __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > > const&) [128] std::uniform_real_distribution<double>::uniform_real_distribution(double, double) [17] bus* std::__uninitialized_copy_a<bus const*, bus*, bus>(bus const*, bus const*, bus*, std::allocator<bus>&)
+ [112] __gnu_cxx::new_allocator<bus>::max_size() const [5] double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&) [12] std::log(long double)
+  [49] __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::base() const [6] double std::uniform_real_distribution<double>::operator()<std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul> >(std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>&, std::uniform_real_distribution<double>::param_type const&) [47] unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+ [113] __gnu_cxx::__normal_iterator<bus*, std::vector<bus, std::allocator<bus> > >::operator*() const [119] std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::max() [38] unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  [30] std::initializer_list<bus>::end() const [18] std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::min() [121] bus const& std::forward<bus const&>(std::remove_reference<bus const&>::type&)
+ [114] std::initializer_list<bus>::size() const [129] std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::seed(unsigned long) [122] void std::_Destroy<bus*>(bus*, bus*)
+ [109] std::initializer_list<bus>::begin() const [130] std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::linear_congruential_engine(unsigned long) [123] void std::_Destroy<bus*, bus>(bus*, bus*, std::allocator<bus>&)
+  [26] std::uniform_real_distribution<double>::param_type::a() const [19] std::linear_congruential_engine<unsigned long, 16807ul, 0ul, 2147483647ul>::operator()() [15] std::iterator_traits<bus const*>::difference_type std::distance<bus const*>(bus const*, bus const*)
+  [36] std::uniform_real_distribution<double>::param_type::b() const [10] void std::vector<bus, std::allocator<bus> >::_M_range_initialize<bus const*>(bus const*, bus const*, std::forward_iterator_tag) [48] operator delete(void*)
+  [51] std::allocator<bus>::allocator() [52] std::vector<bus, std::allocator<bus> >::end() [39] operator new(unsigned long)
+ [115] std::allocator<bus>::allocator(std::allocator<bus> const&) [34] std::vector<bus, std::allocator<bus> >::begin() [124] operator new(unsigned long, void*)
+  [44] std::allocator<bus>::~allocator() [9] std::vector<bus, std::allocator<bus> >::vector(std::initializer_list<bus>, std::allocator<bus> const&) [2] __fentry__
+  [37] std::allocator<bus>::~allocator() [13] std::vector<bus, std::allocator<bus> >::~vector() [1] _mcount_private
+ [116] void std::_Destroy_aux<true>::__destroy<bus*>(bus*, bus*) [27] std::__detail::_Mod<unsigned long, 2147483647ul, 16807ul, 0ul, true, true>::__calc(unsigned long) [40] logl
+  [23] std::_Vector_base<bus, std::allocator<bus> >::_M_allocate(unsigned long) [125] std::__detail::_Mod<unsigned long, 2147483647ul, 1ul, 0ul, true, true>::__calc(unsigned long) [3] main
