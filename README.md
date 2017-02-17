@@ -19,6 +19,8 @@ Chapter 14. Parrondo's Paradox <br>
 	additional randomization is sufficient to win!
 
 	The file parrondo.cpp contains the parameterization necessary to prove the
+	result. Also, the file parrando1.cpp contains just the second game to
+	demonstrate that it is a losing game.
 
 Chapter 17. Waiting for Buses <br>
 
