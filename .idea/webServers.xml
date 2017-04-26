@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6fdba9fd-fe71-42e7-a9b7-3324e6e06720" name="C:\Users\svalenti\Documents\GitHub\DigitalDice" url="http://localhost">
+        <fileTransfer port="0" accessType="LOCAL" />
+      </webServer>
+      <webServer id="3d75df45-d9b9-4ba2-8e70-4d264cf41ccc" name="ftps://github.com/svalenti52/Digital_Dice.git" url="http://github.com/svalenti52/Digital_Dice.git">
+        <fileTransfer host="github.com/svalenti52/Digital_Dice.git" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
