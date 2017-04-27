@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="C:\Users\svalenti\Documents\GitHub\DigitalDice" uploadOnCheckin="3d75df45-d9b9-4ba2-8e70-4d264cf41ccc">
+  <component name="PublishConfigData" serverName="C:\Users\svalenti\Documents\GitHub\DigitalDice">
     <serverData>
       <paths name="C:\Users\svalenti\Documents\GitHub\DigitalDice">
         <serverdata>
@@ -17,6 +17,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="ftps://github.com/svalenti52/Digital_Dice.git" />
   </component>
 </project>
