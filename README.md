@@ -76,6 +76,13 @@ Chapter 8. A Toilet Paper Dilemma <br>
 
 Chapter 9. The Forgetful Burglar Problem <br>
 
+    Problem: This is a one-dimensional random walk problem - for an infinite number
+    of houses lined up in a row, how likely is a burglar to revisit a home that he
+    already visited? He is equally likely at each step to do one of four things:
+    1) go two houses to the left; 2) go one house to the left; 3) go one house to
+    the right; 4) go two houses to the right. The goal is to determine the probability
+    that he will revisit in n visits (steps).
+
 Chapter 10. The Umbrella Quandary <br>
 
 Chapter 11. The Case of the Missing Senators <br>

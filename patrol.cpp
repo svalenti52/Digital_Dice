@@ -62,7 +62,7 @@ int main(int argn, char* argv[])
     std::default_random_engine dre;
     std::uniform_real_distribution<double> on_road(0,1);
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 1'000'000;
     std::vector<double> tot_distance_grass { 0.0, 0.0, 0.0, 0.0, 0.0,
                                              0.0, 0.0, 0.0, 0.0, 0.0 };
     std::vector<double> tot_distance_concrete { 0.0, 0.0, 0.0, 0.0, 0.0,
