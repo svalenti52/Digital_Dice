@@ -124,7 +124,7 @@ int main(int argn, char* argv[])
         }
         std::cout << "Number of customers = " << customers.size() << '\n';
 
-        const int nr_clerks = 1;
+        const int nr_clerks = 2;
         std::queue<clerk> free_clerks;
         std::vector<clerk> clerks;
         for ( int jx=0; jx<nr_clerks; ++jx )
@@ -167,7 +167,7 @@ int main(int argn, char* argv[])
                     if ( cust.not_being_serviced() && cust.not_been_serviced() && time_tk > cust.get_arrival_time() )
                         {
                             in_system.insert(cust.get_tag());
-                            if ( free_clerks.empty() == false )
+                            if (!free_clerks.empty())
                             {
                                 in_service.insert(cust.get_tag());
                                 auto cust_it = in_service.begin();
@@ -187,7 +187,7 @@ int main(int argn, char* argv[])
                         }
                 } // end customers
 
-                cur_q_size = static_cast<double>(in_system.size() - in_service.size());
+                cur_q_size = in_system.size() - in_service.size();
                 max_q_len = std::max(max_q_len,cur_q_size);
                 avg_q_len += static_cast<double>(cur_q_size);
                 for ( clerk& ck : clerks )

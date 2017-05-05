@@ -21,7 +21,7 @@ int main(int argn, char* argv[])
 
     std::uniform_real_distribution<double> elevator_pos(0,1);
 
-    const int nr_trials = 10000000;
+    const int nr_trials = 10'000'000;
     const double second_floor = 0.16666667;
 
     int count_above_arrive_first = 0;
@@ -54,8 +54,6 @@ int main(int argn, char* argv[])
                 {
                     ++count_above_arrive_first;
                 }
-
-            //std::cout << total_rolls << '\n';
         }
 
         std::cout << "average time elevator arrives and is going down = " <<

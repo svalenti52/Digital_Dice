@@ -36,7 +36,7 @@ int main(int argn, char* argv[])
     std::default_random_engine dre;
     std::uniform_int_distribution<int> missing_senators(0,99);
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 10'000'000;
 
     int voted_down_count = 0;
     for ( int ix = 0; ix < nr_trials; ++ix )

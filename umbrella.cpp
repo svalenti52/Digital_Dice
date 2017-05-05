@@ -11,7 +11,7 @@ int main()
     std::default_random_engine dre;
     std::uniform_real_distribution<double> is_raining_cmp(0.0, 100.0);
     bool is_raining;
-    const int nr_trials = 10000;
+    const int nr_trials = 10'000;
     std::vector<double> avg_days_till_soaked;
 
 	for ( int rain_pct = 1; rain_pct < 100; ++rain_pct )

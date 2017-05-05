@@ -42,8 +42,9 @@ int main(int argn, char* argv[])
 
     std::default_random_engine dre;
     std::uniform_real_distribution<double> case_decision(0,1);
+    dre.seed(1);
 
-    const int nr_trials = 10000000;
+    const int nr_trials = 10'000'000;
 
     double nr_incorrect_decisions = 0;
     double nr_all_correct = 0;
@@ -51,7 +52,7 @@ int main(int argn, char* argv[])
 
     for ( int ix=0; ix<nr_trials; ++ix )
     {
-        int nr_correct_decisions = 0;
+        long nr_correct_decisions = 0;
 
         std::vector<Decision> verdict_correct_by_judge;
         for ( Judge judge : judges )
@@ -63,7 +64,7 @@ int main(int argn, char* argv[])
                                 [](Decision& d) -> bool { return d.get_verdict_correct(); });
 
         verdict_correct_by_judge[4].set_verdict_correct(verdict_correct_by_judge[0]);
-        int nr_correct_decisions_dup_judge = std::count_if(verdict_correct_by_judge.begin(),
+        long nr_correct_decisions_dup_judge = std::count_if(verdict_correct_by_judge.begin(),
                                                 verdict_correct_by_judge.end(),
                                                 [](Decision& d) -> bool { return d.get_verdict_correct(); });
 

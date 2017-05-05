@@ -18,12 +18,12 @@ int main(int argn, char* argv[])
 
     const int percentage_for_sample = atoi(argv[1]);
     const int lower_limit = 100;
-    const int upper_limit = 1000;
+    const int upper_limit = 1'000;
 
     std::default_random_engine dre;
     std::uniform_int_distribution<int> marathon_size(lower_limit,upper_limit);
 
-    const int nr_trials = 10000;
+    const int nr_trials = 10'000;
 
     std::vector<int> histogram_of_errors;
     for ( int ix = 0; ix < 201; ++ix )

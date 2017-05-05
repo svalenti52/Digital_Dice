@@ -85,9 +85,27 @@ Chapter 9. The Forgetful Burglar Problem <br>
 
 Chapter 10. The Umbrella Quandary <br>
 
+    Problem: A man travels between office and home each day and carries an umbrella
+    with him if it is raining. He starts with having m umbrellas at home and n unbrellas
+    at the office. How many days is he able to go on average until he is soaked? Calculate
+    the number of days based on the probabilities of it raining being 0.01 to 0.99.
+    Remember that he does not carry an umbrella with him if it is not raining. And obviously
+    he is soaked when he has to travel without an umbrella.
+
 Chapter 11. The Case of the Missing Senators <br>
 
+    Problem: Given the number of senators voting against a bill and a number of senators
+    missing (randomly chosen among for/against), what is the probability of a bill being
+    voted down?  In particular figure it out for Against=49, and Missing=3, Missing=4, and
+    Missing=5. A bill is voted down if the number of senators against is greater than the
+    number of senators for a bill (the missing are not present to vote).
+
 Chapter 12. How Many Runners in a Marathon? <br>
+
+    Problem: Based on seeing a sample of the number of runners in a marathon, and also
+    seeing the numbers for identification assigned to each runner in the sample, extrapolate
+    to approximate the total number of runners in the marathon. Use the formula
+    N = (n+1)/n * max_sample - 1, and develop histograms for a 2%, 5%, 105, and 20%.
 
 Chapter 13. A Police Patrol Problem <br>
 
@@ -123,7 +141,22 @@ Chapter 14. Parrondo's Paradox <br>
 
 Chapter 15. How Long is the Wait to Get the Potato Salad? <br>
 
+    Problem: This is a problem of queuing theory - it is measuring the times
+    spent waiting and being served in a delicatessen, along with the length of
+    lines and overall number of people in the deli. One or two clerks are serving
+    the customers. The arrival time and service time are both exponentially
+    distributed. The problem is to calculate (for one, and then two clerks) for
+    an arrival rate of 30 customers per hour and a service rate of first 40
+    customers per hour, then 25 customers per hour.
+
 Chapter 16. The Appeals Court Paradox <br>
+
+    Problem: An appeals court consists of five judges that require a majority
+    vote for a decision. The five judges have the following probabilities of
+    making the right decision: 0.95, 0.95, 0.9, 0.9, and 0.8. What is the probability
+    that they will make an incorrect decision? Then the problem is adjusted
+    by letting the worst judge let his decision be the same as the best judge.
+    What is the probability of an incorrect decision now?
 
 Chapter 17. Waiting for Buses <br>
 
@@ -151,8 +184,43 @@ Chapter 17. Waiting for Buses <br>
 
 Chapter 18. Waiting for Stoplights <br>
 
+    Problem: Starting at a point (m+1, n+1) on two-dimensional grid (well, it is
+    rectangular grid of streets in a big city), a shopper works her way back to
+    point (1, 1) following certain rules: a green light always determines her
+    immediate destination, either south or west towards the unltimate destination.
+    However, once she reaches (1, y) or (x, 1) she always goes immediately south or
+    west (so that neither coordinate goes below one) so that she is finally subject
+    to the stoplights. How many stoplights does she have to wait for as function of
+    where she starts? (Assume that the lights are as likely to be green as red.)
+
 Chapter 19. Electing Emperors and Popes <br>
+
+    Problem: This is an election problem with 3 parameters: N, n, and M.  N is the
+    voting population, n is the candidate population (n <= N), and M is the threshold
+    for deciding the election. Determine the probabilities of selecting a group
+    leader using N=7 and N=25, for the cases n=2, 3, and 4. Use the majority for M.
+    As a further twist, calculate the probabilities where one can vote for himself,
+    and one is prohibited from voting for himself.
 
 Chapter 20. An Optimal Stopping Problem <br>
 
+    Problem: Select a partner from a pool of n candidates, dating them and then
+    deciding if they are the "right" one. The rules are, that once you haved dated
+    one and decided against them, then that one is not eligible again. What should
+    your dating and selection stratgy be given a pool of size n? In addition, note
+    that you pick randomly from the pool and that they are ranked all the way from
+    the best to the worst - you find out how they rank by dating them.
+
 Chapter 21. Chain Reactions, Branching Processes, and Baby Boys
+
+    Problem: This problem is relevant to the fission process whereby neutrons
+    crash into the nucleus of atoms, and in splitting the atom produce a chain
+    reaction of other neutrons to smash other atoms. The theoretical question was
+    calculating the probability distribution of the number of neutrons produced in
+    the nth generation of a chain reaction, generated from a single neutron. It turns
+    out that this same question had been asked earlier with reference to male offspring -
+    what is the probability that you have k males in the nth generation of descendants?
+    Use the results discovered by Lotka, p(0) = 0.4825, p(i) = (0.2126)(0.5893)^(i-1) for
+    i >= 1 to simulate the number of males in ith generation. Specifically, what is the
+    probability for two male descendants in the second generation? Of there being six
+    males in the third generation?
