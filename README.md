@@ -209,7 +209,9 @@ Chapter 20. An Optimal Stopping Problem <br>
     one and decided against them, then that one is not eligible again. What should
     your dating and selection stratgy be given a pool of size n? In addition, note
     that you pick randomly from the pool and that they are ranked all the way from
-    the best to the worst - you find out how they rank by dating them.
+    the best to the worst - you find out how they rank relatively by dating them.
+    In other words, you do not know if you have dated the best without dating them
+    all, but you do know the relative rank of those that you have dated.
 
 Chapter 21. Chain Reactions, Branching Processes, and Baby Boys
 
