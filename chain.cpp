@@ -20,10 +20,7 @@ public:
 	double get_ub() { return prob_ub; }
 	bool operator ^(const double& prob)
 	    {
-	        if ( prob_lb < prob && prob_ub > prob )
-	            return true;
-	        else
-	            return false;
+            return prob_lb < prob && prob < prob_ub;
 	    }
 	void nr_descendants() { std::cout << "nr descendants = " << number_of_descendants << '\n'; }
     int get_nr_descendants() { return number_of_descendants; }
@@ -119,11 +116,11 @@ int main(int argn, char* argv[])
             }
 //        cout  << "descendants number to 3rd generation = " << g_vec.size() << '\n';
         avg_progeny_number += static_cast<double>(g_vec.size());
-        int progeny_count_2_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
+        long progeny_count_2_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
         if ( progeny_count_2_gen == 2 ) avg_2_males_in_2nd_gen += 1.0;
         if ( progeny_count_2_gen == 4 ) avg_4_males_in_2nd_gen += 1.0;
 
-        int progeny_count_3_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(3); } );
+        long progeny_count_3_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(3); } );
         if ( progeny_count_3_gen == 6 ) avg_6_males_in_3rd_gen += 1.0;
 
 //        progeny_count_2_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(2); } );

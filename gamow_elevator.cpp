@@ -56,7 +56,8 @@ int main(int argn, char* argv[])
                 }
         }
 
-        std::cout << "average time elevator arrives and is going down = " <<
-            static_cast<double>(count_above_arrive_first)/static_cast<double>(nr_trials) << '\n';
+        std::cout << "probability elevator arrives first and is going down = " <<
+            static_cast<double>(count_above_arrive_first)/static_cast<double>(nr_trials) <<
+                  " for " << nr_elevators << " elevators\n";
 
 }
