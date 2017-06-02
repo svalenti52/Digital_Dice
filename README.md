@@ -10,7 +10,10 @@ Chapter 0. Introduction (Convex Hulls) <br>
     unit square form a quadrilateral that is concave?  We are here taking the
     property of "concavity" to mean non-convex. The quadrilateral is concave if
     it is possible to contain one of points in the interior of a triangle formed
-    by connecting the other three points.
+    by connecting the other three points. The programs use the convex_hull function
+    of the Boost Geometry library.
+    
+    Associated files: sylvester.cpp and sylvester1.cpp.
 
 Chapter 1. The Clumsy Dishwasher Problem <br>
 
@@ -19,6 +22,8 @@ Chapter 1. The Clumsy Dishwasher Problem <br>
     one dishwasher. How likely is it due to bad fortune rather than being clumsy?
     In other words, assuming an equal load for all, what are the odds that this
     would have happened?
+    
+    Associated files: dishwasher.cpp and dishwasher2.cpp.
 
 Chapter 2. Will Lil and Bill Meet at the Malt Shop? <br>
 
@@ -105,7 +110,7 @@ Chapter 12. How Many Runners in a Marathon? <br>
     Problem: Based on seeing a sample of the number of runners in a marathon, and also
     seeing the numbers for identification assigned to each runner in the sample, extrapolate
     to approximate the total number of runners in the marathon. Use the formula
-    N = (n+1)/n * max_sample - 1, and develop histograms for a 2%, 5%, 105, and 20%.
+    N = (n+1)/n * max_sample - 1, and develop histograms for a 2%, 5%, 10%, and 20%.
 
 Chapter 13. A Police Patrol Problem <br>
 

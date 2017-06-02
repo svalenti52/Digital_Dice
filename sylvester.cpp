@@ -2,7 +2,7 @@
 
 #include <random>
 #include <iostream>
-#include <vector>
+//#include <vector>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/adapted/boost_tuple.hpp>
 #include <boost/geometry/geometries/register/multi_point.hpp>
@@ -18,8 +18,8 @@ int main()
 {
     std::default_random_engine dre;
 //    std::mt19937 dre;
-    std::uniform_real_distribution<double> radial(0,1);
-    std::uniform_real_distribution<double> angular(0, 2*3.1415926536);
+    std::uniform_real_distribution<float> radial(0,1);
+    std::uniform_real_distribution<float> angular(0, static_cast<float>(2.0*3.14159));
 
     int nr_concave = 0;
     const int nr_trials = 10'000'000;
@@ -32,9 +32,9 @@ int main()
 
         for ( int jx = 0; jx < quad_lim; ++jx )
         {
-            double rad = std::sqrt(radial(dre));
-            double ang = angular(dre);
-            vpt.push_back( pt(rad*cos(ang), rad*sin(ang)) );
+            float rad = std::sqrt(radial(dre));
+            float ang = angular(dre);
+            vpt.push_back( pt(rad*static_cast<float>(cos(ang)), rad*static_cast<float>(sin(ang))) );
         }
 
         vec_pt convex_hull;
@@ -49,4 +49,5 @@ int main()
     std::cout << "\nFor the case of 4-sided hulls\n";
     std::cout << "Nr Concave Hulls: " << nr_concave << '\n';
     std::cout << "Prob Concave: " << static_cast<double>(nr_concave)/static_cast<double>(nr_trials) << '\n';
+
 }

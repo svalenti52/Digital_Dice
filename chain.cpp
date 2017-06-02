@@ -33,7 +33,7 @@ private:
 
 std::ostream& operator << (std::ostream& o, Generation_Grid_Elt& g)
     {
-        o << "lb=" << g.prob_lb << "  ub=" << g.prob_ub << '\n';
+        o << "nr_sons=" << g.number_of_descendants << "  lb=" << g.prob_lb << "  ub=" << g.prob_ub << '\n';
         return o;
     }
 
@@ -88,7 +88,9 @@ int main(int argn, char* argv[])
 {
     using namespace std;
 
-//    vector<Generation_Grid_Elt>
+    /* Generate a one-dimensional probability grid from the formula (for up to 7 sons):
+     * p(0) = 0.4825 -- (probability of 0 male offspring)
+     * p(i) = (0.2126) (0.5893)^(i-1) -- (probability of i male offspring) */
     Generation_Prob_Grid generation_prob_grid { Generation_Grid_Elt(0, 0.0, 0.4825) };
     for ( int ix = 1; ix < 8; ++ix )
         generation_prob_grid.push_back( Generation_Grid_Elt(ix, generation_prob_grid[ix-1].get_ub(), generation_prob_grid[ix-1].get_ub() + p_nr_descendants(ix)) );
@@ -96,7 +98,7 @@ int main(int argn, char* argv[])
     for ( Generation_Grid_Elt& g : generation_prob_grid )
         cout << g;
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 1'000'000;
     double avg_progeny_number = 0.0;
     double avg_2_males_in_2nd_gen = 0.0;
     double avg_4_males_in_2nd_gen = 0.0;

@@ -3,7 +3,6 @@
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/adapted/boost_tuple.hpp>
 #include <boost/geometry/geometries/register/multi_point.hpp>
