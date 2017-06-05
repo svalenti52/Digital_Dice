@@ -1,4 +1,6 @@
-// parkinglot4.cpp
+/** \file parkinglot4.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

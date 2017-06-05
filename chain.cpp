@@ -1,4 +1,6 @@
-// chain.cpp
+/** \file chain.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

@@ -1,4 +1,6 @@
-// dishwasher.cpp
+/** \file dishwasher.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

@@ -1,4 +1,6 @@
-// matches.cpp
+/** \file matches.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

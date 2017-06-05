@@ -1,4 +1,9 @@
-// utilities.hpp
+/** \file utilities.hpp
+ *
+ * @tparam T
+ * @param coll
+ * @param optstr
+ */
 
 
 template <typename T>

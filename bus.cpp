@@ -1,4 +1,6 @@
-// bus.cpp
+/** \file bus.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

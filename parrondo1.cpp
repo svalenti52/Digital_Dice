@@ -1,4 +1,6 @@
-// parrondo1.cpp
+/** \file parrondo1.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

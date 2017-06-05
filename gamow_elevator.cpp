@@ -1,4 +1,6 @@
-// gamow_elevator.cpp
+/** \file gamow_elevator.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

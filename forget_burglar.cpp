@@ -1,4 +1,6 @@
-// forget_burglar.cpp
+/** \file forget_burglar.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

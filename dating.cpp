@@ -1,4 +1,6 @@
-// dating.cpp
+/** \file dating.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

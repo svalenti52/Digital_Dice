@@ -1,5 +1,6 @@
-
-// sylvester1.cpp
+/** \file sylvester1.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

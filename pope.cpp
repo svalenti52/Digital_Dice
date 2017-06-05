@@ -1,4 +1,6 @@
-// pope.cpp
+/** \file pope.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

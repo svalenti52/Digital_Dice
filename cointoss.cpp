@@ -1,4 +1,6 @@
-// cointoss.cpp
+/** \file cointoss.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

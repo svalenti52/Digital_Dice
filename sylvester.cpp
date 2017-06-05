@@ -1,4 +1,6 @@
-// sylvester.cpp
+/** \file sylvester.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

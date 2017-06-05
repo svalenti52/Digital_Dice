@@ -1,4 +1,6 @@
-// patrol.cpp
+/** \file patrol.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

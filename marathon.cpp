@@ -1,4 +1,6 @@
-// marathon.cpp
+/** \file marathon.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

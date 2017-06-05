@@ -1,4 +1,6 @@
-// senators.cpp
+/** \file senators.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

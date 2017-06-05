@@ -1,4 +1,6 @@
-// judges.cpp
+/** \file judges.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

@@ -1,4 +1,6 @@
-// maltshop.cpp
+/** \file maltshop.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

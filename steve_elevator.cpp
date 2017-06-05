@@ -1,4 +1,6 @@
-// steve_elevator.cpp
+/** \file steve_elevator.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

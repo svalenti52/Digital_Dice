@@ -1,4 +1,6 @@
-// potato1.cpp
+/** \file potato1.cpp
+ *
+ */
 
 #include <random>
 #include <iostream>

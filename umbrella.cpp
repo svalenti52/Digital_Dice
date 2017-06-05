@@ -1,4 +1,6 @@
-// umbrella.cpp
+/** \file umbrella.cpp
+ *
+ */
 
 #include <vector>
 #include <iostream>
