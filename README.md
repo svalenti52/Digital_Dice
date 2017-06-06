@@ -32,6 +32,8 @@ Chapter 2. Will Lil and Bill Meet at the Malt Shop? <br>
     conditions that whenever Lil comes she will only wait five minutes if Bill does
     not arrive, and whenever Bill comes he will only wait seven minutes if Lil does
     not arrive?  Neither will wait past 4:00.
+    
+     Associated file: maltshop.cpp.
 
 Chapter 3. A Parallel Parking Question <br>
 
@@ -40,6 +42,8 @@ Chapter 3. A Parallel Parking Question <br>
     a car that is member of a mutually nearest neighbor pair? That is, the car chosen
     is the nearest neighbor to another car and that car happens be the nearest
     neighbor of the chosen car also.
+    
+     Associated files: parkinglot.cpp and parkinglot4.cpp.
 
 Chapter 4. A Curious Coin-Flipping Game <br>
 
@@ -48,6 +52,8 @@ Chapter 4. A Curious Coin-Flipping Game <br>
     keep their coins. What is the average number of flips that occur till one runs
     out of coins? It is suggested to not only do ths assuming that coins are fair
     (probability is 0.5 that it's heads) but unfair also.
+    
+     Associated file: cointoss.cpp.
 
 Chapter 5. The Gamow-Stern Elevator Puzzle <br>
 
@@ -57,6 +63,8 @@ Chapter 5. The Gamow-Stern Elevator Puzzle <br>
     floor, this accounts for Gamow seeing the elevator going down 5/6 of the
     time and Stern seeing the elevator going up 5/6 of the time. But what is the
     situation when there are two or three independent elevators?
+    
+     Associated file: gamow_elevator.cpp.
 
 Chapter 6. Steve's Elevator Problem <br>
 
@@ -64,12 +72,16 @@ Chapter 6. Steve's Elevator Problem <br>
     (It is a different floor in the book but the elevator doesn't stop at every
     floor either.) How many stops on average does Steve experience when travelling
     to his floor? Determine this as a function of the number of additional riders.
+    
+     Associated file: steve_elevator.cpp.
 
 Chapter 7. The Pipe Smoker's Discovery <br>
 
     Problem: A pipe smoker has two 40-match match books in his pocket. If he selects
     a match book at random to light his pipe, how many matches does he use in total
     when one of the match books becomes empty?
+    
+     Associated file: matches.cpp and matches_banach.cpp.
 
 Chapter 8. A Toilet Paper Dilemma <br>
 
@@ -78,6 +90,8 @@ Chapter 8. A Toilet Paper Dilemma <br>
     little roll choosers enter with the probability 1-p. As suggested by the name,
     the big roll choosers always choose the roll with the most left and little roll
     choosers always choose the roll with the least left. TBD
+    
+     Associated file: tp.cpp.
 
 Chapter 9. The Forgetful Burglar Problem <br>
 
@@ -87,6 +101,8 @@ Chapter 9. The Forgetful Burglar Problem <br>
     1) go two houses to the left; 2) go one house to the left; 3) go one house to
     the right; 4) go two houses to the right. The goal is to determine the probability
     that he will revisit in n visits (steps).
+    
+     Associated file: forget_burglar.cpp.
 
 Chapter 10. The Umbrella Quandary <br>
 
@@ -96,6 +112,8 @@ Chapter 10. The Umbrella Quandary <br>
     the number of days based on the probabilities of it raining being 0.01 to 0.99.
     Remember that he does not carry an umbrella with him if it is not raining. And obviously
     he is soaked when he has to travel without an umbrella.
+    
+     Associated file: umbrella.cpp.
 
 Chapter 11. The Case of the Missing Senators <br>
 
@@ -104,6 +122,8 @@ Chapter 11. The Case of the Missing Senators <br>
     voted down?  In particular figure it out for Against=49, and Missing=3, Missing=4, and
     Missing=5. A bill is voted down if the number of senators against is greater than the
     number of senators for a bill (the missing are not present to vote).
+    
+     Associated file: senators.cpp.
 
 Chapter 12. How Many Runners in a Marathon? <br>
 
@@ -111,6 +131,8 @@ Chapter 12. How Many Runners in a Marathon? <br>
     seeing the numbers for identification assigned to each runner in the sample, extrapolate
     to approximate the total number of runners in the marathon. Use the formula
     N = (n+1)/n * max_sample - 1, and develop histograms for a 2%, 5%, 10%, and 20%.
+    
+     Associated file: marathon.cpp.
 
 Chapter 13. A Police Patrol Problem <br>
 
@@ -125,6 +147,8 @@ Chapter 13. A Police Patrol Problem <br>
     travelling to the end of the road to turn around to get to the accident.
     The problem is one of determining the minimum distance to the site of the
     accident under these different schemes.
+    
+     Associated file: patrol.cpp.
 
 Chapter 14. Parrondo's Paradox <br>
 
@@ -143,6 +167,8 @@ Chapter 14. Parrondo's Paradox <br>
 	The file parrondo.cpp contains the parameterization necessary to prove the
 	result. Also, the file parrando1.cpp contains just the second game to
 	demonstrate that it is a losing game.
+	
+	 Associated files: parrondo.cpp and parrondo1.cpp.
 
 Chapter 15. How Long is the Wait to Get the Potato Salad? <br>
 
@@ -153,6 +179,8 @@ Chapter 15. How Long is the Wait to Get the Potato Salad? <br>
     distributed. The problem is to calculate (for one, and then two clerks) for
     an arrival rate of 30 customers per hour and a service rate of first 40
     customers per hour, then 25 customers per hour.
+    
+     Associated files: potato.cpp and potato1.cpp.
 
 Chapter 16. The Appeals Court Paradox <br>
 
@@ -162,6 +190,8 @@ Chapter 16. The Appeals Court Paradox <br>
     that they will make an incorrect decision? Then the problem is adjusted
     by letting the worst judge let his decision be the same as the best judge.
     What is the probability of an incorrect decision now?
+    
+     Associated file: judges.cpp.
 
 Chapter 17. Waiting for Buses <br>
 
@@ -186,6 +216,8 @@ Chapter 17. Waiting for Buses <br>
 
 	g++ -std=c++14 -O2 bus.cpp		=> ~6600 ms <br>
 	g++ -std=c++14 -O2 bus3.cpp		=> ~690  ms
+	
+	 Associated files: bus.cpp and bus3.cpp.
 
 Chapter 18. Waiting for Stoplights <br>
 
@@ -197,6 +229,8 @@ Chapter 18. Waiting for Stoplights <br>
     west (so that neither coordinate goes below one) so that she is finally subject
     to the stoplights. How many stoplights does she have to wait for as function of
     where she starts? (Assume that the lights are as likely to be green as red.)
+    
+     Associated file: shopping_grid.cpp.
 
 Chapter 19. Electing Emperors and Popes <br>
 
@@ -206,6 +240,8 @@ Chapter 19. Electing Emperors and Popes <br>
     leader using N=7 and N=25, for the cases n=2, 3, and 4. Use the majority for M.
     As a further twist, calculate the probabilities where one can vote for himself,
     and one is prohibited from voting for himself.
+    
+     Associated file: pope.cpp.
 
 Chapter 20. An Optimal Stopping Problem <br>
 
@@ -217,6 +253,8 @@ Chapter 20. An Optimal Stopping Problem <br>
     the best to the worst - you find out how they rank relatively by dating them.
     In other words, you do not know if you have dated the best without dating them
     all, but you do know the relative rank of those that you have dated.
+    
+    Associated file: dating.cpp.
 
 Chapter 21. Chain Reactions, Branching Processes, and Baby Boys
 
@@ -231,3 +269,5 @@ Chapter 21. Chain Reactions, Branching Processes, and Baby Boys
     i >= 1 to simulate the number of males in ith generation. Specifically, what is the
     probability for two male descendants in the second generation? Of there being six
     males in the third generation?
+    
+    Associated file: chain.cpp.

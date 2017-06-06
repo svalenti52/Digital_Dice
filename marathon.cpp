@@ -1,10 +1,11 @@
 /** \file marathon.cpp
+ * \brief Estimating population size from a sample.
+ *
  *
  */
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <set>
 #include <algorithm>
 #include <functional>

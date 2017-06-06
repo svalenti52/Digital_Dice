@@ -1,10 +1,11 @@
 /** \file parrondo.cpp
+ * \brief Demonstrating that Game A+B wins.
  *
+ * \details
  */
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <set>
 #include <algorithm>
 #include <functional>
@@ -21,27 +22,24 @@ bool is_heads(double coin_flip)
         case SlightlyBadCoin:
             if ( coin_flip > 0.5 + epsilon )
                 return true;
-            return false;
             break;
         case VeryBadCoin:
             if ( coin_flip > 0.9 + epsilon )
                 return true;
-            return false;
             break;
         case FavorableCoin:
             if ( coin_flip > .25 + epsilon )
                 return true;
-            return false;
             break;
         case FairCoin:
             if ( coin_flip > 0.5 )
                 return true;
-            return false;
             break;
     }
+    return false;
 }
 
-int main(int argn, char* argv[])
+int main(int argc, char* argv[])
 {
 
     std::default_random_engine dre;

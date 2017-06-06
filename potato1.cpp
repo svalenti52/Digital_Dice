@@ -1,4 +1,6 @@
 /** \file potato1.cpp
+ * \brief queuing theory, wait times, queue sizes, idle time.
+ *
  *
  */
 
