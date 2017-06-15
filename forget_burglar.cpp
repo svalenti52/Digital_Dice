@@ -9,6 +9,7 @@
 #include <functional>
 #include <chrono>
 #include "utilities.hpp"
+#include <val/util.h>
 
 int main(int argn, char* argv[])
 {
@@ -20,7 +21,7 @@ int main(int argn, char* argv[])
     std::vector<double> prob_revisit_in_steps { 0.0, 0.0, 0.0, 0.0, // probability of revisiting a house in 1-7 steps
                                                0.0, 0.0, 0.0, 0.0 }; // 8 steps is considered other (8, 9, 10, etc.)
 
-    auto start = std::chrono::system_clock::now();
+    StopWatch stopWatch;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
         {
@@ -46,11 +47,7 @@ int main(int argn, char* argv[])
             else prob_revisit_in_steps[houses_visited.size()-1] += 1.0;
         }
 
-    auto finish = std::chrono::system_clock::now();
-    auto duration = finish - start;
-    std::cout << "elapsed time = " <<
-              std::chrono::duration_cast<std::chrono::milliseconds>(duration).count() <<
-              " milliseconds\n";
+    stopWatch.stop();
 
 
     for ( auto& elem : prob_revisit_in_steps ) elem /= static_cast<double>(nr_trials);

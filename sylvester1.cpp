@@ -8,6 +8,7 @@
 #include <boost/geometry/geometries/adapted/boost_tuple.hpp>
 #include <boost/geometry/geometries/register/multi_point.hpp>
 #include <chrono>
+#include <val/util.h>
 
 typedef boost::tuple<double, double> point_type;
 typedef point_type pt;
@@ -28,7 +29,7 @@ int main()
     const int quad_lim = 4;
     const int nr_to_disp_dot = nr_trials / 10;
 
-	auto start = std::chrono::system_clock::now();
+	StopWatch stopWatch;
 
     vec_pt vpt;
     for ( int jx = 0; jx < quad_lim; ++jx )
@@ -64,9 +65,5 @@ int main()
     std::cout << "Nr Concave Hulls: " << nr_concave << '\n';
     std::cout << "Prob Concave: " << static_cast<double>(nr_concave)/static_cast<double>(nr_trials) << '\n';
 
-    auto finish = std::chrono::system_clock::now();
-    auto duration = finish - start;
-	std::cout << "elapsed time = " <<
-		std::chrono::duration_cast<std::chrono::milliseconds>(duration).count() <<
-		" milliseconds\n";
+    stopWatch.stop();
 }

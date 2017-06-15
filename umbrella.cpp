@@ -5,7 +5,6 @@
 #include <vector>
 #include <iostream>
 #include <random>
-#include <string>
 #include "utilities.hpp"
 
 int main()
@@ -29,8 +28,7 @@ int main()
 
 			while (true)
 			{
-			    if ( is_raining_cmp(dre) < rain_pct ) is_raining = true;
-			    else is_raining = false;
+                is_raining = is_raining_cmp(dre) < rain_pct;
 
                 if ( is_raining )
                     {

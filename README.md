@@ -4,7 +4,7 @@ Digital Dice Problems by Paul Nahin
 Compiled with
 g++ -std=c++14
 
-Chapter 0. Introduction (Convex Hulls) <br>
+Chapter 0. Introduction (Convex Hulls)
 
     Problem: What is the probability that four randomly chosen points within a
     unit square form a quadrilateral that is concave?  We are here taking the

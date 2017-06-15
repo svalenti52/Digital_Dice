@@ -4,9 +4,9 @@
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <algorithm>
 #include <chrono>
+#include <val/util.h>
 
 /*--------------------------------------------------------------------------*/
 
@@ -78,7 +78,7 @@ int main()
 
     double avg_closest_bus_time = 0.0;
 
-    auto start = std::chrono::system_clock::now();
+    StopWatch stopWatch;
 
     vector<bus> busses { bus(0, 1.0) };
     for ( int jx = 1; jx < nr_busses; ++jx )
@@ -98,10 +98,5 @@ int main()
     cout << "average closest bus time (min) = "
          << (avg_closest_bus_time / static_cast<double>(nr_trials)) * 60.0 << '\n';
 
-    auto finish = std::chrono::system_clock::now();
-    auto duration = finish - start;
-	std::cout << "elapsed time = " <<
-		std::chrono::duration_cast<std::chrono::milliseconds>(duration).count() <<
-		" milliseconds\n";
-
+    stopWatch.stop();
 }

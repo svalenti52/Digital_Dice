@@ -1,10 +1,9 @@
-/** \file dishwasher.cpp
+/** \file dishwasher2.cpp
  *
  */
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <algorithm>
 
 int main()
@@ -37,8 +36,8 @@ int main()
             else
                 ++dishwashers[4];
         }
-        int break_more_than_3 = std::count_if(dishwashers.begin(), dishwashers.end(),
-            [] (int& i) { if (i > 3) return true; return false; } );
+        int break_more_than_3 = static_cast<int>(std::count_if(dishwashers.begin(), dishwashers.end(),
+            [] (int& i) { return  (i > 3); } ));
 
         any_breaks_4_or_more += break_more_than_3;
     }
