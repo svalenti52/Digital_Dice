@@ -12,7 +12,7 @@ int main()
     std::uniform_real_distribution<double> uniform_dist_over_period(0,30);
 
     int bill_and_lil_meet = 0;
-    const int nr_trials = 10000000;
+    const int nr_trials = 10'000'000;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
         {
