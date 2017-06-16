@@ -1,4 +1,5 @@
 /** \file parkinglot.cpp
+ * \date 24-Sep-14
  *
  */
 
@@ -20,7 +21,7 @@ void set_if_mutual_nearest_neighbors_begin(std::vector<std::pair<double,bool>>& 
 
 bool set_if_mutual_nearest_neighbors_end(std::vector<std::pair<double,bool>>& p_lot)
     {
-        int end_pos = p_lot.size()-1;
+        int end_pos = static_cast<int>(p_lot.size()-1);
         if ( p_lot[end_pos-1].first - p_lot[end_pos-2].first >
              p_lot[end_pos].first - p_lot[end_pos-1].first )
             {

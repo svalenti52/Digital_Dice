@@ -7,6 +7,7 @@
  */
 
 #include <val/montecarlo/MCS_Real.h>
+#include <algorithm>
 
 int main()
 {
