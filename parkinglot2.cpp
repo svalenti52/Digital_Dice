@@ -19,16 +19,16 @@ int main()
                     difference.push_back(vd[ix+1]-vd[ix]);
                 difference.push_back(1.1);
                 difference.push_front(1.1);
-                int x = mcs_real_and_integer.uid(mcs_real_and_integer.dre);
-                // difference[x] is before the xth element
-                if (difference[x]>1.0) {
-                    return difference[x+1] < difference[x+2];
+                int rand_int = mcs_real_and_integer.uid(mcs_real_and_integer.dre);
+                // difference[rand_int] is before the rand_int-th element
+                if (difference[rand_int]>1.0) {
+                    return difference[rand_int+1] < difference[rand_int+2];
                 }
-                else if (difference[x+1]>1.0) {
-                    return difference[x] < difference[x-1];
+                else if (difference[rand_int+1]>1.0) {
+                    return difference[rand_int] < difference[rand_int-1];
                 }
-                else return difference[x] < difference[x+1] ?
-                            difference[x] < difference[x-1] : difference[x+1] < difference[x+2];
+                else return difference[rand_int] < difference[rand_int+1] ?
+                            difference[rand_int] < difference[rand_int-1] : difference[rand_int+1] < difference[rand_int+2];
             }, nullptr);
 
     mcs_real_and_integer.run();

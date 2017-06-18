@@ -5,8 +5,6 @@
 #include <random>
 #include <iostream>
 #include <algorithm>
-//#define _GLIBCXX_USE_C99
-//#include <string>
 
 int main(int argn, char* argv[])
 {
@@ -29,7 +27,7 @@ int main(int argn, char* argv[])
 //    std::uniform_int_distribution<int> coin_flip(0,1);
     std::uniform_real_distribution<double> coin_flip(0,1);
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 1'000'000;
 
 
     for ( int ix = 0; ix < nr_trials; ++ix )
