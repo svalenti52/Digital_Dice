@@ -52,7 +52,7 @@ int main(int argn, char* argv[])
                         ++state[0];
                     }
                     mcs_integer.interim_count += 1.0;
-                    mcs_integer.random_event.reload_random_integers();
+                    mcs_integer.random_event.reload_random_values();
                 }
                 return true;
             } );

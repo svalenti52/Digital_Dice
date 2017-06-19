@@ -20,6 +20,7 @@ int main()
                 return deque_of_difference.member_of_mutually_closest(rand_int);
             }, nullptr);
 
+
     StopWatch stopWatch;
 
     mcs_real_and_integer.run();
