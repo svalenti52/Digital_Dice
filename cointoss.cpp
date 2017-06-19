@@ -5,6 +5,7 @@
 #include <random>
 #include <iostream>
 #include <algorithm>
+#include <val/util.h>
 
 int main(int argn, char* argv[])
 {
@@ -27,8 +28,9 @@ int main(int argn, char* argv[])
 //    std::uniform_int_distribution<int> coin_flip(0,1);
     std::uniform_real_distribution<double> coin_flip(0,1);
 
-    const int nr_trials = 1'000'000;
+    const int nr_trials = 10'000'000;
 
+    StopWatch stopWatch;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
         {
@@ -69,5 +71,6 @@ int main(int argn, char* argv[])
         std::cout << "number of coin tosses on avg till out = " <<
             total_rolls/static_cast<double>(nr_trials) << '\n';
 
+        stopWatch.stop();
 
 }
