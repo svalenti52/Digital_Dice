@@ -15,9 +15,10 @@ int main()
             [&mcs_real_and_integer](std::vector<double>& vd) -> bool {
                 Deque_of_Difference<double> deque_of_difference(vd, 1.1, 1.1, 1.0);
 
-                int rand_int = mcs_real_and_integer.uid(mcs_real_and_integer.dre);
+                mcs_real_and_integer.random_discrete_event.reload_random_values();
 
-                return deque_of_difference.member_of_mutually_closest(rand_int);
+                return deque_of_difference.member_of_mutually_closest
+                        (mcs_real_and_integer.random_discrete_event.events[0]);
             }, nullptr);
 
 

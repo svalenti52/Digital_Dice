@@ -18,7 +18,6 @@ int main(int argn, char* argv[])
         return 1;
     }
 
-
     int coins1 = atoi(argv[1]);
     int coins2 = atoi(argv[2]);
     int coins3 = atoi(argv[3]);
@@ -27,25 +26,25 @@ int main(int argn, char* argv[])
     std::vector<int> i_state_vector {coins1, coins2, coins3};
 
     MCS_Integer mcs_integer(10'000'000, 1, 2, 3,
-            [&mcs_integer](std::vector<int>& vi, std::vector<int>& state) -> bool {
+            [&mcs_integer](std::vector<int>& random_vec, std::vector<int>& state) -> bool {
                 while ( std::none_of(
                         state.begin(),
                         state.end(),
                         [](double d) { return d == 0; } ) ) {
-                    if ( vi[0] == vi[1] && vi[1] == vi[2] );
-                    else if ( vi[0] == vi[1] ) {
+                    if ( random_vec[0] == random_vec[1] && random_vec[1] == random_vec[2] );
+                    else if ( random_vec[0] == random_vec[1] ) {
                         --state[0];
                         --state[1];
                         ++state[2];
                         ++state[2];
                     }
-                    else if ( vi[0] == vi[2] ) {
+                    else if ( random_vec[0] == random_vec[2] ) {
                         --state[0];
                         --state[2];
                         ++state[1];
                         ++state[1];
                     }
-                    else if ( vi[1] == vi[2] ) {
+                    else if ( random_vec[1] == random_vec[2] ) {
                         --state[1];
                         --state[2];
                         ++state[0];
@@ -56,7 +55,6 @@ int main(int argn, char* argv[])
                 }
                 return true;
             } );
-
 
     mcs_integer.load_integer_state_vector(i_state_vector);
 
