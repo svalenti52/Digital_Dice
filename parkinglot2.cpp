@@ -15,15 +15,15 @@ int main()
             [&mcs_real_and_integer](std::vector<double>& vd) -> bool {
                 Deque_of_Difference<double> deque_of_difference(vd, 1.1, 1.1, 1.0);
 
-                mcs_real_and_integer.random_discrete_event.reload_random_values();
+                mcs_real_and_integer.random_discrete_events.reload_random_values();
 
                 return deque_of_difference.member_of_mutually_closest
-                        (mcs_real_and_integer.random_discrete_event.events[0]);
+                        (mcs_real_and_integer.random_discrete_events.events[0]);
             }, nullptr);
 
-    Distribution<int> distribution(0, 9);
+    //Distribution<int> distribution(0, 9, 1);
 
-    Distribution<double> distribution1(0.0, 5.0);
+    //Distribution<double> distribution1(0.0, 5.0, 10);
 
     StopWatch stopWatch;
 

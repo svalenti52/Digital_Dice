@@ -30,7 +30,7 @@ int main(int argn, char* argv[])
                 while ( std::none_of(
                         state.begin(),
                         state.end(),
-                        [](double d) { return d == 0; } ) ) {
+                        [](int d) { return d == 0; } ) ) {
                     if ( random_vec[0] == random_vec[1] && random_vec[1] == random_vec[2] );
                     else if ( random_vec[0] == random_vec[1] ) {
                         --state[0];
@@ -51,7 +51,7 @@ int main(int argn, char* argv[])
                         ++state[0];
                     }
                     mcs_integer.interim_count += 1.0;
-                    mcs_integer.random_event.reload_random_values();
+                    mcs_integer.random_events.reload_random_values();
                 }
                 return true;
             } );
