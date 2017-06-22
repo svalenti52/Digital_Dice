@@ -15,7 +15,7 @@ Chapter 0. Introduction (Convex Hulls)
     
     Associated files: sylvester.cpp and sylvester1.cpp.
 
-Chapter 1. The Clumsy Dishwasher Problem <br>
+Chapter 1. The Clumsy Dishwasher Problem
 
     Problem: There are five dishwashers working in a restaurant, and after working
     for a week, they have broken five dishes, with four of them attributable to
@@ -25,7 +25,7 @@ Chapter 1. The Clumsy Dishwasher Problem <br>
     
     Associated files: dishwasher.cpp and dishwasher2.cpp.
 
-Chapter 2. Will Lil and Bill Meet at the Malt Shop? <br>
+Chapter 2. Will Lil and Bill Meet at the Malt Shop?
 
     Problem: What is the probability the Lil and Bill will meet at the malt shop
     if they agree to meet within a 1/2 hour window (say 3:30 to 4:00) but with the
@@ -35,7 +35,7 @@ Chapter 2. Will Lil and Bill Meet at the Malt Shop? <br>
     
      Associated file: maltshop.cpp.
 
-Chapter 3. A Parallel Parking Question <br>
+Chapter 3. A Parallel Parking Question
 
     Problem: Cars are parallel parked in single narrow lot (there is only one row).
     Given n cars parked in this fashion, what is the liklihood of randomly choosing
@@ -45,7 +45,7 @@ Chapter 3. A Parallel Parking Question <br>
     
      Associated files: parkinglot.cpp and parkinglot4.cpp.
 
-Chapter 4. A Curious Coin-Flipping Game <br>
+Chapter 4. A Curious Coin-Flipping Game
 
     Problem: Three men have L, M, and N coins which they match by flipping so that
     the odd man wins - he gets the other two's coins. If all three match, they all
@@ -55,7 +55,7 @@ Chapter 4. A Curious Coin-Flipping Game <br>
     
      Associated file: cointoss.cpp.
 
-Chapter 5. The Gamow-Stern Elevator Puzzle <br>
+Chapter 5. The Gamow-Stern Elevator Puzzle
 
     Problem: Gamow and Stern both have offices in a seven storey building - Gamow
     on the second floor and Stern on the sixth floor. Assuming that a single

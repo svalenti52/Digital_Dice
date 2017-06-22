@@ -25,6 +25,7 @@ int main(int argn, char* argv[])
 
     std::vector<int> i_state_vector {coins1, coins2, coins3};
 
+
     MCS_Integer mcs_integer(10'000'000, 1, 2, 3,
             [&mcs_integer](std::vector<int>& random_vec, std::vector<int>& state) -> bool {
                 while ( std::none_of(
@@ -63,7 +64,7 @@ int main(int argn, char* argv[])
     mcs_integer.run();
 
     std::cout << "state vector = ";
-    for ( int i : mcs_integer.permanent_state_vector )
+    for ( int i : mcs_integer.initial_state_vector )
         std::cout << i << " ";
     std::cout << "\n\n";
 

@@ -26,7 +26,7 @@ int main(int argn, char* argv[])
 
     std::uniform_int_distribution<int> floor(1,11);
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 1'000'000;
     const double steve_floor = 9;
 
     int nr_stops = 0;
@@ -34,7 +34,7 @@ int main(int argn, char* argv[])
     for ( int ix = 0; ix < nr_trials; ++ix )
         {
             ++nr_stops; // counting Steve's stop
-            std::vector<double> riders;
+            std::vector<int> riders;
 
             for ( int ix=0; ix<nr_add_riders; ++ix )
                 riders.push_back(floor(dre));

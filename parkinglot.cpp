@@ -61,7 +61,7 @@ int main(int argn, char* argv[])
 //    std::mt19937 dre;
     std::uniform_real_distribution<double> uniform_dist_over_unit(0,1);
 
-    const int nr_trials = 1'000'000;
+    const int nr_trials = 10'000'000;
     int mutual_nearest_count = 0;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
