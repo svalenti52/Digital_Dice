@@ -36,7 +36,7 @@ int main(int argn, char* argv[])
             ++nr_stops; // counting Steve's stop
             std::vector<int> riders;
 
-            for ( int ix=0; ix<nr_add_riders; ++ix )
+            for ( int jx=0; jx<nr_add_riders; ++jx )
                 riders.push_back(floor(dre));
 
             std::sort(riders.begin(), riders.end());

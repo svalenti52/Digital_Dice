@@ -51,7 +51,7 @@ int main(int argn, char* argv[])
                         ++state[0];
                         ++state[0];
                     }
-                    mcs_integer.interim_count += 1.0;
+                    mcs_integer.increment_interim_value();
                     mcs_integer.random_events.reload_random_values();
                 }
                 return true;
@@ -59,14 +59,16 @@ int main(int argn, char* argv[])
 
     mcs_integer.load_integer_state_vector(i_state_vector);
 
+    mcs_integer.change_message("number of flips till one is out = ");
+
     StopWatch stopWatch;
 
     mcs_integer.run();
 
-    std::cout << "state vector = ";
+    std::cout << "three players have = ";
     for ( int i : mcs_integer.initial_state_vector )
         std::cout << i << " ";
-    std::cout << "\n\n";
+    std::cout << "  coins\n\n";
 
 
     mcs_integer.print_result();
