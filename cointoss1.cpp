@@ -25,31 +25,30 @@ int main(int argn, char* argv[])
 
     std::vector<int> i_state_vector {coins1, coins2, coins3};
 
-
     MCS_Integer mcs_integer(10'000'000, 1, 2, 3,
-            [&mcs_integer](std::vector<int>& random_vec, std::vector<int>& state) -> bool {
+            [&mcs_integer](std::vector<int>& coin_toss, std::vector<int>& stake) -> bool {
                 while ( std::none_of(
-                        state.begin(),
-                        state.end(),
-                        [](int d) { return d == 0; } ) ) {
-                    if ( random_vec[0] == random_vec[1] && random_vec[1] == random_vec[2] );
-                    else if ( random_vec[0] == random_vec[1] ) {
-                        --state[0];
-                        --state[1];
-                        ++state[2];
-                        ++state[2];
+                        stake.begin(),
+                        stake.end(),
+                        [](int cash) { return cash == 0; } ) ) {
+                    if ( coin_toss[0] == coin_toss[1] && coin_toss[1] == coin_toss[2] );
+                    else if ( coin_toss[0] == coin_toss[1] ) {
+                        --stake[0];
+                        --stake[1];
+                        ++stake[2];
+                        ++stake[2];
                     }
-                    else if ( random_vec[0] == random_vec[2] ) {
-                        --state[0];
-                        --state[2];
-                        ++state[1];
-                        ++state[1];
+                    else if ( coin_toss[0] == coin_toss[2] ) {
+                        --stake[0];
+                        --stake[2];
+                        ++stake[1];
+                        ++stake[1];
                     }
-                    else if ( random_vec[1] == random_vec[2] ) {
-                        --state[1];
-                        --state[2];
-                        ++state[0];
-                        ++state[0];
+                    else if ( coin_toss[1] == coin_toss[2] ) {
+                        --stake[1];
+                        --stake[2];
+                        ++stake[0];
+                        ++stake[0];
                     }
                     mcs_integer.increment_interim_value();
                     mcs_integer.random_events.reload_random_values();

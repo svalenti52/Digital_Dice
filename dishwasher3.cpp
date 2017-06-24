@@ -14,7 +14,6 @@ int main()
 {
     StopWatch stopWatch;
 
-
     MCS_Real mcs_real(10'000'000, 0.0, 1.0, 5, [](std::vector<double>& vd) -> bool {
         return std::count_if(vd.begin(), vd.end(), [](double d) { return d < 0.2;} ) > 3;
     });

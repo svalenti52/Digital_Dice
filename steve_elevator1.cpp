@@ -14,7 +14,8 @@
 const int steve_floor = 9;
 
 int main() {
-    MCS_Integer mcs_integer(10'000'000, 1, 11, 4,
+
+    MCS_Integer mcs_integer(10'000'000, 1, 11, 2,
         [&mcs_integer](std::vector<int>& random_floors, std::vector<int>& transient) -> bool {
             std::sort(random_floors.begin(), random_floors.end());
             auto unique_floor_end = std::unique(random_floors.begin(), random_floors.end());

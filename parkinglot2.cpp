@@ -11,6 +11,7 @@
 
 int main()
 {
+
     MCS_Real_and_Integer mcs_real_and_integer(10'000'000, 0.0, 1.0, 0, 9, 10, 1,
             [&mcs_real_and_integer](std::vector<double>& vd) -> bool {
 
