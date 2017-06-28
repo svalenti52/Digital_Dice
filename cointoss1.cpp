@@ -50,6 +50,7 @@ int main(int argn, char* argv[])
                         ++stake[0];
                         ++stake[0];
                     }
+
                     mcs_integer.increment_interim_value();
                     mcs_integer.random_events.reload_random_values();
                 }
