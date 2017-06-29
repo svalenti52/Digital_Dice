@@ -46,7 +46,7 @@ int main() {
             1'000'000,
             condition_met,
             1, 2, 1, 1, ///> first two parameters give ratio of probability for Bernoulli (1/2 in this case)
-            0, 40, 2, 2
+            0, 40, 2, 2 ///> second distribution is used as a state vector each time condition_met is called
     );
 
     monteCarloSimulation.change_message("average number of matches removed = ");

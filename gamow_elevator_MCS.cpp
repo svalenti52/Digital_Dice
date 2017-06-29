@@ -1,7 +1,7 @@
 /**
- * /file gamow_elevator.cpp
- * /date 25-Jun-2017
- * /author
+ * \file gamow_elevator.cpp
+ * \date 25-Jun-2017
+ * \author svalenti
  */
 
 #include <val/montecarlo/MonteCarloSim.h>

@@ -55,11 +55,14 @@ int main(int argc, char* argv[])
         return true;
     };
 
+    Distribution<int, DIST::BernoulliIntegral> cointoss_distribution(0.5, 3);
+    Distribution<int, DIST::UniformIntegral> coins_at_stake(0, 1, 3);
+
     MonteCarloSimulation<int, int, DIST::BernoulliIntegral, DIST::UniformIntegral> monteCarloSimulation(
             10'000'000, ///> number of trials
             condition_met,      ///> condition met?
-            1, 2, 3, 1,  ///> Numerator, Denominator, nr_events for primary distribution, seed primary
-            0, 1, 3, 2); ///> lower bound, upper bound, nr_events for secondary distribution, seed secondary
+            cointoss_distribution,  ///> primary distribution (new constructor)
+            coins_at_stake); ///> secondary distribution
 
     monteCarloSimulation.change_message("average number of tosses till out = ");
 
