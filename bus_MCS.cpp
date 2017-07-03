@@ -12,25 +12,29 @@ using DIST = DistributionType;
 
 int main() {
 
-    auto condition_met = [](Distribution<double, DIST::UniformReal>& pd,
+    auto condition_met = [](Distribution<double, DIST::UniformReal>& bus_arrivals,
             Distribution<double, DIST::UniformReal>& rider,
-            double& iv) -> bool {
+            double& closest_next_bus) -> bool {
 
-        pd.events[0] = 1.0; // always set one of the buses to the hour
+        bus_arrivals.events[0] = 1.0; // always set one of the buses to the hour
 
         rider.reload_random_values();
+
         /*
          // This is faster than using Differences
-        iv = 5.0;
-        for ( double event : pd.events ) {
-            if ( rider.events[0] > event ) continue;
-            double pot_smallest_diff = event - rider.events[0];
-            if ( pot_smallest_diff < iv ) iv = pot_smallest_diff;
+        closest_next_bus = 5.0;
+        for ( double bus_arrival : bus_arrivals.events ) {
+            if ( rider.events[0] > bus_arrival ) continue;
+            double pot_closest_next_bus = bus_arrival - rider.events[0];
+            if ( pot_closest_next_bus < closest_next_bus ) closest_next_bus = pot_closest_next_bus;
         }
         */
-        Differences<double> differences(pd.events, rider.events[0], 5.0);
 
-        iv = differences.smallest_positive_difference();
+        ///*
+        Differences<double> differences(bus_arrivals.events, rider.events[0], 5.0);
+
+        closest_next_bus = differences.smallest_positive_difference();
+        //*/
 
         return true;
     };

@@ -1,5 +1,8 @@
-/** \file dating.cpp
+/**
+ * \file dating.cpp
+ * \date
  *
+ * \brief
  */
 
 #include <random>
@@ -32,7 +35,7 @@ int main(int argn, char* argv[])
             return 1;
         }
 
-    const int nr_trials = 1000000;
+    const int nr_trials = 1'000'000;
     const int population_size = atoi(argv[1]);
     const int best_sel_size = atoi(argv[2]);
     const int dating_trial_size = atoi(argv[3]);
@@ -40,7 +43,7 @@ int main(int argn, char* argv[])
     vector<Wife_Candidate> wc;
 
     for ( int ix = 0; ix < population_size; ++ix )
-        wc.push_back(ix);
+        wc.push_back(Wife_Candidate(ix));
 
     double best_cat_selected = 0.0;
 
@@ -53,7 +56,7 @@ int main(int argn, char* argv[])
             std::cout << w.get_suitability() << " ";
         std::cout << '\n';
 */
-        int considered_best = 1000000;
+        int considered_best = 1'000'000;
 
         for ( int ix = 0; ix < dating_trial_size; ++ix )
         {

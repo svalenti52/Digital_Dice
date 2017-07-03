@@ -2,6 +2,9 @@
  * \file cointoss.cpp
  * \date 24-Jun-2017
  *
+ * \brief Three players tossing coins, "odd" man out wins round, all matching no effect.
+ *
+ * \detail Expected number of tosses till one of the players is out, i.e., has 0 coins left.
  */
 
 #include <val/util.h>
@@ -26,7 +29,7 @@ int main(int argc, char* argv[])
 
     const std::vector<int> stake_vector{coins1, coins2, coins3};
 
-    auto condition_met = [stake_vector](Distribution<int, DIST::BernoulliIntegral>& cointoss,
+    auto condition_met = [stake_vector](Distribution<bool, DIST::BernoulliIntegral>& cointoss,
             Distribution<int, DIST::UniformIntegral>& stake,
             double& iv) -> bool {
 
@@ -55,10 +58,10 @@ int main(int argc, char* argv[])
         return true;
     };
 
-    Distribution<int, DIST::BernoulliIntegral> cointoss_distribution(0.5, 3);
+    Distribution<bool, DIST::BernoulliIntegral> cointoss_distribution(0.5, 3);
     Distribution<int, DIST::UniformIntegral> coins_at_stake(0, 1, 3);
 
-    MonteCarloSimulation<int, int, DIST::BernoulliIntegral, DIST::UniformIntegral> monteCarloSimulation(
+    MonteCarloSimulation<bool, int, DIST::BernoulliIntegral, DIST::UniformIntegral> monteCarloSimulation(
             10'000'000, ///> number of trials
             condition_met,      ///> condition met?
             cointoss_distribution,  ///> primary distribution (new constructor)

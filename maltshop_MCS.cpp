@@ -5,7 +5,7 @@
  */
 
 #include <val/util.h>
-#include <val/montecarlo_alt/MonteCarloSim.h>
+#include <val/montecarlo/MonteCarloSim.h>
 
 using DIST = DistributionType;
 

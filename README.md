@@ -130,7 +130,8 @@ Chapter 12. How Many Runners in a Marathon? <br>
     Problem: Based on seeing a sample of the number of runners in a marathon, and also
     seeing the numbers for identification assigned to each runner in the sample, extrapolate
     to approximate the total number of runners in the marathon. Use the formula
-    N = (n+1)/n * max_sample - 1, and develop histograms for a 2%, 5%, 10%, and 20%.
+    N = (n+1)/n * max_sample - 1, and develop histograms for 2%, 5%, 10%, and 20% sample
+    sizes.
     
      Associated file: marathon.cpp.
 
