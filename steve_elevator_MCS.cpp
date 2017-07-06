@@ -5,7 +5,14 @@
  * \brief Calculates the average number of elevator stops as a function of
  * the number of riders.
  *
- * \details
+ * \details The riders are uniformly distributed over 11 floors.
+ * The riders are then sorted prior to finding unique floors at which
+ * they are stopping (only one floor should be counted even if multiple
+ * riders are getting off at that floor). At that point one is counted
+ * for Steve's floor and the remaining floors are counted at which riders
+ * are getting off and that happen to be less than Steve's floor.
+ * The requirement is finding out how many stops Steve makes on his way
+ * up to his floor (including his floor).
  */
 
 #include <val/montecarlo/MonteCarloSim.h>
@@ -20,14 +27,14 @@ int main(int argc, char*argv[]) {
 
     auto condition_met = [](Distribution<int, DIST::UniformIntegral>& random_floors,
             Distribution<int, DIST::UniformIntegral>& sd,
-            double& iv) -> bool { ///> condition met?
+            double& floors_stopped_at) -> bool { ///> condition met?
         std::sort(random_floors.events.begin(), random_floors.events.end());
         auto unique_floor_end = std::unique(random_floors.events.begin(), random_floors.events.end());
-        iv = 1.0 +
+        floors_stopped_at = 1.0 +
                 std::count_if(random_floors.events.begin(), unique_floor_end,
-                    [](int random_floor) {
-                        return random_floor < steve_floor;
-                    } );
+                        [](int random_floor) {
+                            return random_floor < steve_floor;
+                        } );
         return true;
     };
 
