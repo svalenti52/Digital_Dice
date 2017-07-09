@@ -7,7 +7,7 @@
  * \detail Expected number of tosses till one of the players is out, i.e., has 0 coins left.
  */
 
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
 #include <val/montecarlo/MonteCarloSim.h>
 #include <algorithm>
 

@@ -1,4 +1,5 @@
-/** \file forget_burglar.cpp
+/**
+ * \file forget_burglar.cpp
  *
  */
 
@@ -9,7 +10,7 @@
 #include <functional>
 #include <chrono>
 #include "utilities.hpp"
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
 
 int main(int argn, char* argv[])
 {

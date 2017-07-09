@@ -1,4 +1,5 @@
-/** \file shopping_grid.cpp
+/**
+ * \file shopping_grid.cpp
  *
  */
 

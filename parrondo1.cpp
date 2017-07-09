@@ -1,4 +1,5 @@
-/** \file parrondo1.cpp
+/**
+ * \file parrondo1.cpp
  * \brief Demonstrating the Game B loses
  *
  * .

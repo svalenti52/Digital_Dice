@@ -1,4 +1,5 @@
-/** \file umbrella.cpp
+/**
+ * \file umbrella.cpp
  *
  */
 
@@ -41,7 +42,7 @@ int main()
                                         ++nr_umbrellas_at_office;
                                     }
                             }
-                        else if ( !at_home )
+                        else //if ( !at_home )
                             {
                                 if ( nr_umbrellas_at_office == 0 ) break;
                                 else

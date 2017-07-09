@@ -1,4 +1,5 @@
-/** \file marathon.cpp
+/**
+ * \file marathon.cpp
  * \brief Estimating population size from a sample.
  *
  *

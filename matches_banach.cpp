@@ -1,4 +1,5 @@
-/** \file matches_banach.cpp
+/**
+ * \file matches_banach.cpp
  *
  */
 

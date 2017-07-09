@@ -1,4 +1,5 @@
-/** \file utilities.hpp
+/**
+ * \file utilities.hpp
  *
  * @tparam T
  * @param coll

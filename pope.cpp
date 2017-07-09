@@ -1,4 +1,5 @@
-/** \file pope.cpp
+/**
+ * \file pope.cpp
  *
  */
 

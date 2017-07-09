@@ -1,4 +1,5 @@
-/** \file matches.cpp
+/**
+ * \file matches.cpp
  *
  */
 

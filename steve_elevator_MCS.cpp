@@ -1,5 +1,5 @@
 /**
- * \file steve_elevator.cpp
+ * \file steve_elevator_MCS.cpp
  * \date 25-Jun-2017
  * \author svalenti
  * \brief Calculates the average number of elevator stops as a function of
@@ -16,8 +16,8 @@
  */
 
 #include <val/montecarlo/MonteCarloSim.h>
-#include <val/montecarlo/Differences.h>
-#include <val/util.h>
+#include <val/montecarlo/Chronology.h>
+#include <algorithm>
 
 using DIST = DistributionType;
 

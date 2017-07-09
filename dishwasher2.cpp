@@ -1,4 +1,5 @@
-/** \file dishwasher2.cpp
+/**
+ * \file dishwasher2.cpp
  *
  */
 

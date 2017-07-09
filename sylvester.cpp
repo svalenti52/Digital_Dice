@@ -1,4 +1,5 @@
-/** \file sylvester.cpp
+/**
+ * \file sylvester.cpp
  *
  */
 
