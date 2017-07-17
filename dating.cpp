@@ -2,12 +2,11 @@
  * \file dating.cpp
  * \date
  *
- * \brief
+ * \brief See dating_MCS.cpp for brief and details.
  */
 
 #include <random>
 #include <iostream>
-#include <vector>
 #include <algorithm>
 
 /*--------------------------------------------------------------------------*/
@@ -40,6 +39,11 @@ int main(int argn, char* argv[])
     const int best_sel_size = atoi(argv[2]);
     const int dating_trial_size = atoi(argv[3]);
 
+    if ( population_size <= dating_trial_size ) {
+        cout << "population size must be larger than dating pool size";
+        return 2;
+    }
+
     vector<Wife_Candidate> wc;
 
     for ( int ix = 0; ix < population_size; ++ix )
@@ -63,6 +67,9 @@ int main(int argn, char* argv[])
             if ( considered_best > wc[ix].get_suitability() )  considered_best = wc[ix].get_suitability();
         }
 
+        /// NOTE: answer appears incorrect for dating_trial_size == population_size
+        /// but if the pre-decision pool is the population size, then theoretically
+        /// no one is chosen
         for ( int ix = dating_trial_size; ix < wc.size(); ++ix )
         {
 //            std::cout << considered_best << " ";
