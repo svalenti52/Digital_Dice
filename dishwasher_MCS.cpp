@@ -2,6 +2,8 @@
  * \file dishwasher_MCS.cpp
  * \date 24-Jun-2017
  *
+ * \brief Probability of a particular dishwasher breaking 4 or 5 dishes
+ * out of 5 broken, given equal skills and a pool of 5 dishwashers in total.
  */
 
 #include <algorithm>
@@ -12,18 +14,28 @@ using DIST = DistributionType;
 
 int main() {
 
-    auto condition_met = [](Distribution<double, DIST::UniformReal>& pd,
-            Distribution<double, DIST::UniformReal>& sd,
-            double& iv) -> bool { ///> condition met?
-        /// iv is one by default which is all we need here
-        return std::count_if(pd.events.begin(), pd.events.end(), [](double d) { return d < 0.2;} ) > 3;
-    };
+    const double clumsy_id_interval = 0.2;
+    const int dish_breakage_lower_bound = 3;
 
-    MonteCarloSimulation<double, double, DIST::UniformReal, DIST::UniformReal> monteCarloSimulation(
+    Distribution<double, DIST::UniformReal> dishwashers_breaking_5_dishes(0.0, 1.0, 5);
+
+    //-------------------------------------------------------------------------
+    auto condition_met = [clumsy_id_interval, dish_breakage_lower_bound]
+            (Distribution<double, DIST::UniformReal>& _dishwashers_breaking_5,
+            double& event_clumsy_breaks_gt_3) -> bool
+    { ///> condition met? if so, then event_clumsy_breaks_gt_3 gets added to cumulative_value
+        /// event_clumsy_breaks_gt_3 is one by default which is all we need here
+        return std::count_if(_dishwashers_breaking_5.events.begin(),
+                _dishwashers_breaking_5.events.end(),
+                [clumsy_id_interval, dish_breakage_lower_bound](double clumsy_breaks_a_dish) {
+                    return clumsy_breaks_a_dish < clumsy_id_interval;} ) > dish_breakage_lower_bound;
+    };
+    //-------------------------------------------------------------------------
+
+    MonteCarloSimulation_alpha<double, double, DIST::UniformReal> monteCarloSimulation(
             10'000'000, ///> number of trials
             condition_met,  ///> condition met?
-            0.0, 1.0, 5, 1,  ///> lower bound, upper bound, nr_events for primary distribution, seed primary
-            0.0, 1.0, 0, 2); ///> lower bound, upper bound, nr_events for secondary distribution, seed secondary
+            dishwashers_breaking_5_dishes);  ///> lower bound, upper bound, nr_events for primary distribution, seed primary
 
     StopWatch stopWatch;
 

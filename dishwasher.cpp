@@ -14,6 +14,7 @@ int main()
     int clumsy_breaks_4_or_more = 0;
     const int nr_trials = 10000000;
     const int dishes_broken = 5;
+    const double probability_clumsy_breaks_if_random = 0.2;
 
     for ( int ix = 0; ix < nr_trials; ++ix )
     {
@@ -23,7 +24,8 @@ int main()
         {
             double rnd_val_in_unit_interval = uniform_dist_over_unit(dre);
 
-            if ( rnd_val_in_unit_interval < .2 )
+            if ( rnd_val_in_unit_interval < probability_clumsy_breaks_if_random )
+                /// no magic code allowed in conditional check! - MarekC
                 ++clumsy_break_count;
         }
 
