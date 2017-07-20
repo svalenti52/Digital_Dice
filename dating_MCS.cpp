@@ -18,6 +18,7 @@
  */
 
 #include <val/montecarlo/MonteCarloSim.h>
+#include <val/montecarlo/Chronology.h>
 #include <algorithm>
 
 //-----------------------------------------------------------------------------
@@ -50,12 +51,17 @@ int main(int argc, char*argv[])
         return 2;
     }
 
+    Distribution<int, DistributionType::UniformIntegral>
+            distribution(100, Structure::List_Without_Repetition);
+
     double best_cat_selected_count = 0.0;
 
-    vector<Spouse_Candidate> spouse_candidate_list;
+    deque<Spouse_Candidate> spouse_candidate_list;
 
     for (int ix = 0; ix<population_size; ++ix)
         spouse_candidate_list.push_back(Spouse_Candidate(ix));
+
+    StopWatch stopWatch;
 
     for (int jx = 0; jx<nr_trials; ++jx) {
         random_shuffle(spouse_candidate_list.begin(), spouse_candidate_list.end());
@@ -65,11 +71,12 @@ int main(int argc, char*argv[])
         if ( dating_trial_size+1 == population_size )
             most_suitable = spouse_candidate_list[spouse_candidate_list.size()-1]();
         else {
-            /// pre-decision phase dating
+            /// PRE-DECISION PHASE DATING
             for (int ix = 0; ix<dating_trial_size; ++ix)
                 if (most_suitable>spouse_candidate_list[ix]()) most_suitable = spouse_candidate_list[ix]();
             /// replace if better, i.e., lower in value
 
+            /// SELECTION PHASE (i.e., next one better or else last)
             /// choose next one that is better than the best of the pre-decision phase
             for (int ix = dating_trial_size; ix<spouse_candidate_list.size(); ++ix) {
                 if ( most_suitable > spouse_candidate_list[ix]() )
@@ -85,6 +92,9 @@ int main(int argc, char*argv[])
                 best_cat_selected_count += 1.0;
         }
     }
+
+    stopWatch.stop();
+
     std::cout << "probability best selected = "
               << best_cat_selected_count / static_cast<double>(nr_trials) << '\n';
 

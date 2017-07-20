@@ -1,5 +1,5 @@
 /**
- * \file cointoss.cpp
+ * \file cointoss_MCS.cpp
  * \date 24-Jun-2017
  *
  * \brief Three players tossing coins, "odd" man out wins round, all matching no effect.
@@ -31,12 +31,12 @@ int main(int argc, char* argv[])
 
     auto condition_met = [stake_vector](Distribution<bool, DIST::BernoulliIntegral>& cointoss,
             Distribution<int, DIST::UniformIntegral>& stake,
-            double& iv) -> bool {
+            double& nr_flips_till_out) -> bool {
 
-        iv = 0;
+        nr_flips_till_out = 0;
         stake.reload_values(stake_vector);
         while ( std::none_of(stake.events.begin(), stake.events.end(), [](int cash) { return cash == 0;} )) {
-            ++iv;
+            ++nr_flips_till_out;
             cointoss.reload_random_values();
             if ( cointoss.events[0] == cointoss.events[1] && cointoss.events[1] == cointoss.events[2] ) continue;
             else if ( cointoss.events[0] == cointoss.events[1] ) {

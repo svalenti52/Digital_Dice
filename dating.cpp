@@ -8,6 +8,7 @@
 #include <random>
 #include <iostream>
 #include <algorithm>
+#include <val/montecarlo/Chronology.h>
 
 /*--------------------------------------------------------------------------*/
 
@@ -51,6 +52,8 @@ int main(int argn, char* argv[])
 
     double best_cat_selected = 0.0;
 
+    StopWatch stopWatch;
+    
     for ( int jx = 0; jx < nr_trials; ++jx )
     {
 
@@ -89,6 +92,8 @@ int main(int argn, char* argv[])
 //            std::cout << "Not the best = " << considered_best << '\n';
     }
 
+    stopWatch.stop();
+    
     std::cout << "probability best selected = "
         << best_cat_selected / static_cast<double>(nr_trials) << '\n';
 }
