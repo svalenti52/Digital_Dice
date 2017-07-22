@@ -5,6 +5,7 @@
 #include <random>
 #include <iostream>
 #include <algorithm>
+#include <val/montecarlo/Chronology.h>
 
 /*--------------------------------------------------------------------------*/
 
@@ -42,7 +43,7 @@ typedef std::vector<Generation_Grid_Elt> Generation_Prob_Grid;
 
 /*--------------------------------------------------------------------------*/
 
-double p_nr_descendants(int nr_descendants)
+double prob_nr_descendants(int nr_descendants)
 {
     return (0.2126 * pow(0.5893, nr_descendants-1));
 }
@@ -52,7 +53,7 @@ double p_nr_descendants(int nr_descendants)
 
 class Generation;
 
-std::vector<Generation> g_vec;
+std::vector<Generation> generations;
 
 class Generation
 {
@@ -69,7 +70,7 @@ public:
                         {
                             for (int ix=0; ix<(idx_it->get_nr_descendants()); ix++)
                             {
-                                g_vec.push_back(Generation(generation+1, det_nr_descendants(dre), p_i));
+                                generations.emplace_back(Generation(generation+1, det_nr_descendants(dre), p_i));
                             }
 
                         }
@@ -94,44 +95,53 @@ int main(int argn, char* argv[])
      * p(i) = (0.2126) (0.5893)^(i-1) -- (probability of i male offspring) */
     Generation_Prob_Grid generation_prob_grid { Generation_Grid_Elt(0, 0.0, 0.4825) };
     for ( int ix = 1; ix < 8; ++ix )
-        generation_prob_grid.push_back( Generation_Grid_Elt(ix, generation_prob_grid[ix-1].get_ub(), generation_prob_grid[ix-1].get_ub() + p_nr_descendants(ix)) );
+        generation_prob_grid.emplace_back( Generation_Grid_Elt(ix,
+                generation_prob_grid[ix-1].get_ub(),
+                generation_prob_grid[ix-1].get_ub() + prob_nr_descendants(ix)) );
 
-    for ( Generation_Grid_Elt& g : generation_prob_grid )
-        cout << g;
+    //for ( Generation_Grid_Elt& g : generation_prob_grid )
+    //    cout << g;
 
-    const int nr_trials = 1'000'000;
+    const int nr_trials = 10'000'000;
     double avg_progeny_number = 0.0;
     double avg_2_males_in_2nd_gen = 0.0;
     double avg_4_males_in_2nd_gen = 0.0;
     double avg_6_males_in_3rd_gen = 0.0;
 
+    StopWatch stopWatch;
+
     for ( int ix = 0; ix < nr_trials; ++ix )
     {
         double nr_descendants = det_nr_descendants(dre);
 
-        auto idx_it = find_if(generation_prob_grid.begin(), generation_prob_grid.end(), [nr_descendants](Generation_Grid_Elt& g) { return g ^ nr_descendants; } );
+        auto idx_it = find_if(generation_prob_grid.begin(),
+                generation_prob_grid.end(),
+                [nr_descendants](Generation_Grid_Elt& g) { return g ^ nr_descendants; } );
+
         if ( idx_it == generation_prob_grid.end() ) cout << "DID NOT FIND\n";
         else
             {
                 // idx_it->nr_descendants();
                 for ( int jx = 0; jx < idx_it->get_nr_descendants(); ++jx )
-                    g_vec.push_back(Generation(1, det_nr_descendants(dre), generation_prob_grid));
+                    generations.emplace_back(Generation(1, det_nr_descendants(dre), generation_prob_grid));
             }
-//        cout  << "descendants number to 3rd generation = " << g_vec.size() << '\n';
-        avg_progeny_number += static_cast<double>(g_vec.size());
-        long progeny_count_2_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
+//        cout  << "descendants number to 3rd generation = " << generations.size() << '\n';
+        avg_progeny_number += static_cast<double>(generations.size());
+        long progeny_count_2_gen = count_if(generations.begin(), generations.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
         if ( progeny_count_2_gen == 2 ) avg_2_males_in_2nd_gen += 1.0;
         if ( progeny_count_2_gen == 4 ) avg_4_males_in_2nd_gen += 1.0;
 
-        long progeny_count_3_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(3); } );
+        long progeny_count_3_gen = count_if(generations.begin(), generations.end(), [](Generation& g) -> bool { return g.if_generation(3); } );
         if ( progeny_count_3_gen == 6 ) avg_6_males_in_3rd_gen += 1.0;
 
-//        progeny_count_2_gen = count_if(g_vec.begin(), g_vec.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
+//        progeny_count_2_gen = count_if(generations.begin(), generations.end(), [](Generation& g) -> bool { return g.if_generation(2); } );
   //      if ( progeny_count_2_gen == 4 ) avg_2_males_in_2nd_gen += 1.0;
-        g_vec.clear();
+        generations.clear();
     }
     cout << "average progeny number = " << avg_progeny_number/static_cast<double>(nr_trials) << '\n';
     cout << "prob 2 males 2nd generation = " << avg_2_males_in_2nd_gen/static_cast<double>(nr_trials) << '\n';
     cout << "prob 4 males 2nd generation = " << avg_4_males_in_2nd_gen/static_cast<double>(nr_trials) << '\n';
     cout << "prob 6 males 3rd generation = " << avg_6_males_in_3rd_gen/static_cast<double>(nr_trials) << '\n';
+
+    stopWatch.stop();
 }
