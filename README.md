@@ -4,16 +4,21 @@ Digital Dice Problems by Paul Nahin
 Compiled with
 g++ -std=c++14
 
-Chapter 0. Introduction (Convex Hulls)
+Chapter 0. Introduction (Convex Hulls, Sequence Monotonically Increasing)
 
-    Problem: What is the probability that four randomly chosen points within a
-    unit square form a quadrilateral that is concave?  We are here taking the
+    Problem (Convex Hulls): What is the probability that four randomly chosen points
+    within a unit square form a quadrilateral that is concave?  We are here taking the
     property of "concavity" to mean non-convex. The quadrilateral is concave if
     it is possible to contain one of points in the interior of a triangle formed
     by connecting the other three points. The programs use the convex_hull function
     of the Boost Geometry library.
     
-    Associated files: sylvester.cpp and sylvester1.cpp.
+    Problem (Sequence Monotonically Increasing): Determine the average length of the
+    sequence at which numbers randomly chosen from the unit interval cease increasing.
+    The sequence length includes the first number that is less than the previous one.
+    So every sequence will have of length of at least two.
+    
+    Associated files: sylvester.cpp, sylvester1.cpp, montonic.cpp, montonic_MCS.cpp.
 
 Chapter 1. The Clumsy Dishwasher Problem
 

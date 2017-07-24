@@ -12,7 +12,7 @@ int main()
     std::default_random_engine dre;
     std::uniform_real_distribution<double> sequence(0.0,1.0);
 
-    const int nr_trials = 10000000;
+    const int nr_trials = 10'000'000;
 
     int sum_len_of_seq = 0;
     int max_len_of_seq = 0;
