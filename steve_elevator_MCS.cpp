@@ -15,7 +15,7 @@
  * up to his floor (including his floor).
  */
 
-#include <val/montecarlo/MonteCarloSim.h>
+#include <val/montecarlo/MonteCarloSim_alpha.h>
 #include <val/montecarlo/Chronology.h>
 #include <algorithm>
 
@@ -25,24 +25,26 @@ const int steve_floor = 9;
 
 int main(int argc, char*argv[]) {
 
-    auto condition_met = [](Distribution<int, DIST::UniformIntegral>& random_floors,
-            Distribution<int, DIST::UniformIntegral>& sd,
-            double& floors_stopped_at) -> bool { ///> condition met?
-        std::sort(random_floors.events.begin(), random_floors.events.end());
-        auto unique_floor_end = std::unique(random_floors.events.begin(), random_floors.events.end());
+    Distribution<int, DIST::UniformIntegral> random_floors(1, 11, 5);
+
+    auto condition_met = [](Distribution<int, DIST::UniformIntegral>& _random_floors,
+            double& floors_stopped_at,
+            DRE& dre) -> bool { ///> condition met?
+        std::sort(_random_floors.events.begin(), _random_floors.events.end());
+        auto unique_floor_end = std::unique(_random_floors.events.begin(), _random_floors.events.end());
         floors_stopped_at = 1.0 +
-                std::count_if(random_floors.events.begin(), unique_floor_end,
+                std::count_if(_random_floors.events.begin(), unique_floor_end,
                         [](int random_floor) {
                             return random_floor < steve_floor;
                         } );
         return true;
     };
 
-    MonteCarloSimulation<int, int, DIST::UniformIntegral, DIST::UniformIntegral> monteCarloSimulation(
+    MonteCarloSimulation<int, double, DIST::UniformIntegral> monteCarloSimulation(
             10'000'000,
+            1,
             condition_met,
-            1, 11, 5, 1,
-            1, 11, 0, 2
+            random_floors
     );
 
     monteCarloSimulation.change_message("average number of elevator stops is ");

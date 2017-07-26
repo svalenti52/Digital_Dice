@@ -15,15 +15,23 @@ using DIST = DistributionType;
 const double Lil_will_wait = 5.0;
 const double Bill_will_wait = 7.0;
 
+const int Lil_arrives = 1;
+const int Bill_arrives = 0;
+
 int main()
 {
     Distribution<double, DIST::UniformReal> Lil_and_Bill_30_minute_window(0.0, 30.0, 2);
 
-    auto condition_met = [](Distribution<double, DIST::UniformReal>& pd,
+    auto condition_met = [](Distribution<double, DIST::UniformReal>& Thirty_minute_window,
             double& iv,
             DRE& dre) -> bool {
-        if (pd.events[0] > pd.events[1]) return pd.events[0] - pd.events[1] <= Lil_will_wait;
-        return pd.events[1] - pd.events[0] <= Bill_will_wait;
+
+        if (Thirty_minute_window.events[Bill_arrives] > Thirty_minute_window.events[Lil_arrives])
+            return Thirty_minute_window.events[Bill_arrives]
+                    - Thirty_minute_window.events[Lil_arrives] <= Lil_will_wait;
+
+        return Thirty_minute_window.events[Lil_arrives]
+                - Thirty_minute_window.events[Bill_arrives] <= Bill_will_wait;
     };
 
     MonteCarloSimulation<double, double, DIST::UniformReal> monteCarloSimulation(
@@ -38,6 +46,7 @@ int main()
 
     stopWatch.stop();
 
-    monteCarloSimulation.print_result();
+    monteCarloSimulation.change_message("Probability that Bill and Lil meet at the malt shop = ");
 
+    monteCarloSimulation.print_result();
 }
