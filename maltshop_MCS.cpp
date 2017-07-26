@@ -1,6 +1,9 @@
 /**
- * \file maltshop.cpp
+ * \file maltshop_MCS.cpp
  * \date 24-Jun-2017
+ *
+ * \brief Probability that Bill and Lil meet within a 30 minute window
+ * given uniformly random arrival times and a limited waiting time for each.
  *
  */
 
