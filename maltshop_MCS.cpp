@@ -5,25 +5,29 @@
  */
 
 #include <val/montecarlo/Chronology.h>
-#include <val/montecarlo/MonteCarloSim.h>
+#include <val/montecarlo/MonteCarloSim_alpha.h>
 
 using DIST = DistributionType;
 
+const double Lil_will_wait = 5.0;
+const double Bill_will_wait = 7.0;
+
 int main()
 {
+    Distribution<double, DIST::UniformReal> Lil_and_Bill_30_minute_window(0.0, 30.0, 2);
 
     auto condition_met = [](Distribution<double, DIST::UniformReal>& pd,
-            Distribution<double, DIST::UniformReal>& sd,
-            double& iv) -> bool {
-        if (pd.events[0] > pd.events[1]) return pd.events[0] - pd.events[1] <= 5.0;
-        else return pd.events[1] - pd.events[0] <= 7.0;
+            double& iv,
+            DRE& dre) -> bool {
+        if (pd.events[0] > pd.events[1]) return pd.events[0] - pd.events[1] <= Lil_will_wait;
+        return pd.events[1] - pd.events[0] <= Bill_will_wait;
     };
 
-    MonteCarloSimulation<double, double, DIST::UniformReal, DIST::UniformReal> monteCarloSimulation(
+    MonteCarloSimulation<double, double, DIST::UniformReal> monteCarloSimulation(
             10'000'000, ///> number of trials
+            1,          ///> seed
             condition_met,      ///> condition met?
-            0.0, 30.0, 2, 1,  ///> lower bound, upper bound, nr_events for primary distribution, seed primary
-            0.0, 1.0, 0, 2); ///> lower bound, upper bound, nr_events for secondary distribution, seed secondary
+            Lil_and_Bill_30_minute_window); ///> distribution within 30 minutes
 
     StopWatch stopWatch;
 
