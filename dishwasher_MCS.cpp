@@ -15,11 +15,11 @@ int main() {
     const double clumsy_id_interval = 0.2;
     const int clumsy_breakage_lower_bound = 3;
 
-    Distribution<double, std::uniform_real_distribution> dishwashers_breaking_5_dishes(0.0, 1.0, 5);
+    Distribution<double, double, std::uniform_real_distribution> dishwashers_breaking_5_dishes(0.0, 1.0, 5);
 
     //-------------------------------------------------------------------------
     auto condition_met = [clumsy_id_interval, clumsy_breakage_lower_bound]
-            (Distribution<double, std::uniform_real_distribution>& _dishwashers_breaking_5,
+            (Distribution<double, double, std::uniform_real_distribution>& _dishwashers_breaking_5,
             double& event_clumsy_breaks_gt_3,
             DRE& dre) -> bool
     { ///> condition met? if so, then event_clumsy_breaks_gt_3 gets added to cumulative_value
@@ -34,11 +34,11 @@ int main() {
     };
     //-------------------------------------------------------------------------
 
-    MonteCarloSimulation<double, double, std::uniform_real_distribution> monteCarloSimulation(
+    MonteCarloSimulation<double, double, double, std::uniform_real_distribution> monteCarloSimulation(
             10'000'000, ///> number of trials
             1,          ///> seed for dre
             condition_met,  ///> condition met?
-            dishwashers_breaking_5_dishes);  ///> lower bound, upper bound, nr_events for primary distribution, seed primary
+            dishwashers_breaking_5_dishes);  ///> distribution
 
     StopWatch stopWatch;
 
@@ -47,5 +47,4 @@ int main() {
     stopWatch.stop();
 
     monteCarloSimulation.print_result();
-
 }
