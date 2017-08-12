@@ -8,20 +8,18 @@
 
 #include <algorithm>
 #include <val/montecarlo/Chronology.h>
-#include <val/montecarlo/MonteCarloSim_alpha.h>
-
-using DIST = DistributionType;
+#include <val/montecarlo/MonteCarloSim_beta.h>
 
 int main() {
 
     const double clumsy_id_interval = 0.2;
     const int clumsy_breakage_lower_bound = 3;
 
-    Distribution<double, DIST::UniformReal> dishwashers_breaking_5_dishes(0.0, 1.0, 5);
+    Distribution<double, std::uniform_real_distribution> dishwashers_breaking_5_dishes(0.0, 1.0, 5);
 
     //-------------------------------------------------------------------------
     auto condition_met = [clumsy_id_interval, clumsy_breakage_lower_bound]
-            (Distribution<double, DIST::UniformReal>& _dishwashers_breaking_5,
+            (Distribution<double, std::uniform_real_distribution>& _dishwashers_breaking_5,
             double& event_clumsy_breaks_gt_3,
             DRE& dre) -> bool
     { ///> condition met? if so, then event_clumsy_breaks_gt_3 gets added to cumulative_value
@@ -36,7 +34,7 @@ int main() {
     };
     //-------------------------------------------------------------------------
 
-    MonteCarloSimulation<double, double, DIST::UniformReal> monteCarloSimulation(
+    MonteCarloSimulation<double, double, std::uniform_real_distribution> monteCarloSimulation(
             10'000'000, ///> number of trials
             1,          ///> seed for dre
             condition_met,  ///> condition met?
