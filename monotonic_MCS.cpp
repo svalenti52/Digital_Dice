@@ -10,20 +10,20 @@
  *
  */
 
-#include <val/montecarlo/MonteCarloSim_alpha.h>
+#include <val/montecarlo/MonteCarloSim_beta.h>
 #include <val/montecarlo/Chronology.h>
-
-using DIST = DistributionType;
 
 int main() {
 
-    Distribution<double, DIST::UniformReal> distribution(0.0, 1.0, 1);
+    Distribution<double, double, std::uniform_real_distribution> distribution(0.0, 1.0, 1);
 
     //-------------------------------------------------------------------------
 
-    auto condition_met = [](Distribution<double, DIST::UniformReal>& number_sequence,
-            double& len_sequence, DRE& dre) -> bool {
-
+    auto condition_met = [](
+            Distribution<double, double, std::uniform_real_distribution>& number_sequence,
+            double& len_sequence,
+            DRE& dre) -> bool
+        {
 
         len_sequence = 2.0;
         number_sequence.add_random_value_to_end(dre); /// sequence is now 2 in length
@@ -41,7 +41,7 @@ int main() {
 
     //-------------------------------------------------------------------------
 
-    MonteCarloSimulation<double, double, DIST::UniformReal>
+    MonteCarloSimulation<double, double, double, std::uniform_real_distribution>
             monteCarloSimulation(
             10'000'000,
             1,

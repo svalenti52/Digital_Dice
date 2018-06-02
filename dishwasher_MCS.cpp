@@ -26,7 +26,7 @@ int main() {
         /// event_clumsy_breaks_gt_3 is one by default which is all we need here
         return std::count_if(_dishwashers_breaking_5.events.begin(),
                 _dishwashers_breaking_5.events.end(),
-                [clumsy_id_interval, clumsy_breakage_lower_bound](double who_broke_this_dish)
+                [clumsy_id_interval](double who_broke_this_dish)
                 {
                     return who_broke_this_dish < clumsy_id_interval;
                 }
